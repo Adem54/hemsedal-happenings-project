@@ -7,6 +7,7 @@ components are like "mini" layouts. Styles for small, reusable pieces of the sit
 */
 
 
+
 .btnUserPage {
     
   line-height: 1.2857em;
@@ -29,115 +30,113 @@ color:rgb(255, 102, 0) ;
 background-color: #fff;
 }
 
-  .form-element, .form-date {
-        
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0;
-    padding-left: 0.3rem;
-    font-size: 0.8rem;
-    color: $primary-font-color;
-
-    background-color: #fff;
-    background-clip: padding-box;
-    border: .07rem solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s;
-  }
+.form-element, .form-date {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0;
+  padding-left: 0.3rem;
+  font-size: 0.8rem;
+  color: $primary-font-color;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: .07rem solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s;
+}
 
 
+
+.errorValidationMessage {
+  font-size: 0.8rem;
+  color: red;
   
-  .errorValidationMessage {
-    font-size: 0.8rem;
-    color: red;
-    
-  }
-  /*success icon*/
+}
+/*success icon*/
 
-  .icon-checkmark:before {
-    content: "\ea10";
-    color: green;
-    margin-left: 0.3rem;
-    margin-top: 0.1rem;
-  }
-
-  
-  .errorStyle {
-    border: .07rem solid red;
-  }
-
-  .successStyle {
-    border: .07rem solid green;
-  }
+.icon-checkmark:before {
+  content: "\ea10";
+  color: green;
+  margin-left: 0.3rem;
+  margin-top: 0.1rem;
+}
 
 
-  .form-element:hover  {
-    color: #495057;/*form element yazisi kalinlasiyor yani darklasiyor uzerine gelince*/
-    background-color: #fff;
-    border-color: #80bdff;
-    outline: 0;
-  }
-  .form-element:focus {
-    color: #495057;/*focus olunca da yazi darklasiyor...*/
-    background-color: #fff;
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0 ,123,255,.25);
+.errorStyle {
+  border: .07rem solid red;
+}
+
+.successStyle {
+  border: .07rem solid green;
+}
 
 
-  }
+.form-element:hover  {
+  color: #495057;/*form element yazisi kalinlasiyor yani darklasiyor uzerine gelince*/
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+}
+.form-element:focus {
+  color: #495057;/*focus olunca da yazi darklasiyor...*/
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0 ,123,255,.25);
+
+
+}
 /* hover i incele form-date i mi yoksa digerini mi devreden cikaracaz*/
-  .form-date:hover {
-    color: #495057;/*renk darklasiyor*/
-    background-color: #fff;
-    border-color: #80bdff;
-    outline: 0;
-  }
-  .form-date:focus {
-    color: #495057;/*renk darklasiyor*/
-    background-color: #fff;
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0 ,123,255,.25);
-  }
+.form-date:hover {
+  color: #495057;/*renk darklasiyor*/
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+}
+.form-date:focus {
+  color: #495057;/*renk darklasiyor*/
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0 ,123,255,.25);
+}
 
-  .submitBtn {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-  }
+.submitBtn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
 
-  .btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 
-  .btn-primary {
-    color: #fff;
-    background-color: $secondary-color;
-    border-color: $secondary-color;
-  }
-  .btn-primary:hover {
-    cursor: pointer;
-    color: #fff;
-    background-color:$secondary-color-dark ;
-    border-color: $secondary-color-dark;
-  }
+.btn-primary {
+  color: #fff;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+}
+.btn-primary:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color:$secondary-color-dark ;
+  border-color: $secondary-color-dark;
+}
 
 
 
@@ -155,6 +154,7 @@ box-shadow: 0 0 15px 5px #ccc;
 text-align: center;
 }
 
+
 .close {
 position: absolute;
 width: 30px;
@@ -171,7 +171,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 cursor: pointer;
-
 background-color:rgb(210, 118, 223);
 color:darkblue;
 font-weight: 700;
@@ -181,11 +180,43 @@ font-size: 2rem;
 }
 /* islemler bitince danger kismini sil... */
 
+@media screen and (max-width: 600px) {
+.alert {
+  box-sizing: border-box;
+  width: 80%;
+  margin: 3rem auto;
+padding: .4rem;
+position: relative;
+border-radius: .4rem;
+box-shadow: 0 0 15px 5px #ccc;
+text-align: center;
 
+
+  }
+
+
+  .close {
+    opacity: 1;
+    right: 1rem;
+    top: .5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color:rgb(210, 118, 223);
+    color:darkblue;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 1rem;
+    }
+}
 .error-alert {
 background-color: #f7a7a3;
 border: 1px solid;
 padding: 2rem 0;
+font-size: .8rem;
+
 }
 
 
@@ -198,6 +229,8 @@ color: #8f130c;
 background-color: #a8f0c6;
 border: 1px solid;
 padding: 2rem 0;
+font-size: .8rem;
+
 }
 /* .success-alert .close*/
 

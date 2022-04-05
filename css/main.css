@@ -225,10 +225,39 @@ components are like "mini" layouts. Styles for small, reusable pieces of the sit
 }
 
 /* islemler bitince danger kismini sil... */
+@media screen and (max-width: 600px) {
+  .alert {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 3rem auto;
+    padding: .4rem;
+    position: relative;
+    border-radius: .4rem;
+    box-shadow: 0 0 15px 5px #ccc;
+    text-align: center;
+  }
+  .close {
+    opacity: 1;
+    right: 1rem;
+    top: .5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #d276df;
+    color: darkblue;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+}
+
 .error-alert {
   background-color: #f7a7a3;
   border: 1px solid;
   padding: 2rem 0;
+  font-size: .8rem;
 }
 
 /* .error-alert .close {
@@ -239,6 +268,7 @@ color: #8f130c;
   background-color: #a8f0c6;
   border: 1px solid;
   padding: 2rem 0;
+  font-size: .8rem;
 }
 
 /* .success-alert .close*/
@@ -280,7 +310,6 @@ body {
   padding: 1rem 0;
 }
 
-/*header-form-content display flex column  altinda */
 .form-content {
   width: 50%;
   height: 100%;
@@ -291,6 +320,54 @@ body {
   color: #6e7375;
 }
 
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 0.3rem;
+    padding: 1rem .2rem;
+  }
+  .form-content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 0.3rem;
+    padding: 1rem .2rem;
+  }
+  .form-content {
+    width: 90%;
+  }
+}
+
+/*header-form-content display flex column  altinda */
 /*
 layout contains styles for different aspects of the site's structural layout (think of areas like nav bars, headers, footers, etc.)
 */
