@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    
+    <!--CategoryIcon links-->
+    <link rel="stylesheet" href="icons/categoryIcons/childrenAndFamily/style.css">
+    <link rel="stylesheet" href="icons/categoryIcons/concert/style.css">
+    <link rel="stylesheet" href="icons/categoryIcons/exhibition/style.css">
+    <link rel="stylesheet" href="icons/categoryIcons/familyAndEnjoy/style.css">
+    <link rel="stylesheet" href="icons/categoryIcons/festival/style.css">
+    <link rel="stylesheet" href="icons/categoryIcons/sport/style.css">
+    <link rel="stylesheet" href="icons/categoryIcons/theater/style.css">
+    <link rel="stylesheet" href="icons/modalCancelIcon/style.css">
+   <link rel="stylesheet" href="/css/main.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+ 
+  <!--Font-awesome kit code-->
+  <script src="https://kit.fontawesome.com/05902d1e0f.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="./icons/successCheckBoxIcon/style.css">
+<link rel="stylesheet" href="./icons/createHappeningIcon/style.css">
+    <script src="./js/model.js"></script>
+    <script src="js/common.js"></script>
+    <script src="./js/admin/adminController.js"></script>
+    <script src="./js/admin/adminView.js"></script>
+    <script src="./js/user/userController.js"></script>
+    <script src="./js/user/userView.js"></script>
+
+ 
+<script src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+
+
+
+     
+
+
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+ 
+    
+
+
+ 
+  <script>
+
+
+updateView();
+      function updateView() {
+        
+
+        let { page } = model.app;
+        switch (page) {
+          case "user":
+            return updateUserView();
+          case "admin":
+            return updateAdminView();
+
+          default:
+            break;
+        }
+
+       
+      }
+
+   
+      localStorage.setItem("happenings",JSON.stringify(model.data.happenings));
+      
+</script>
+
+
+</body>
+</html>
+
+
+
+
+  
+
