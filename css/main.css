@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 .error-alert {
 background-color: #f7a7a3;
@@ -58,13 +57,6 @@ border-left: .3rem solid #8f130c;
 }
 
 /*Bunlari biz gidip html icerisinde class onlarak yazdigimizda direk bu degerleri alacaklar-ayni bootstrap  mantigidir bu
-*/
-/*
-Components
-Alip baska bir yerde de kullanmayi dusundugumuz yapilar
-site_log,title,btn,carosel,slider,hazir yapilar olup da tekrar tekrar kullanabilecegimiz yapilardir
-Component olarak tuttugumuz yapilarimiz olan carosel, slider,card,icon,button,title gibi belli kalip olarak tutacagimiz elemanlara ait scss kodlarini burda tutup bunlari biz farkli projelerimizde de kullanabiliriz…
-components are like "mini" layouts. Styles for small, reusable pieces of the site should reside here (think buttons, forms, profile pictures, etc.)
 */
 .btnUserPage {
   line-height: 1.2857em;
