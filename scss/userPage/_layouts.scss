@@ -3,7 +3,6 @@
 
 .fullscreen-header {
     height: 85vh;
-    
     /*3be8b0    00aeef*/
     background-image:linear-gradient(to right top,rgba(#3be8b0, .4) ,rgba(#000,.5)), url("/images/hemsedal.jpg");
     background-repeat: no-repeat;
@@ -14,6 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
 
 
@@ -544,7 +544,7 @@ text-overflow:hidden;
   }
 
   @media only screen and (max-width:1380px){
- 
+    
     .happenings {
  margin-top: 1rem;
 
@@ -571,13 +571,12 @@ text-overflow:hidden;
 
 
       @media only screen and (max-width:1100px){
-      
+        .fullscreen-header {
+          height: 70vh;    
+        }
         .happenings {
- margin-top: 1rem;
-
+        margin-top: 1rem;
           padding: 0 2%;
-    
-        
         }
         
         .slider-container { 
@@ -600,7 +599,7 @@ text-overflow:hidden;
 
 
   @media only screen and (max-width:940px){
- 
+   
     .filterBar-container {
       width: 100%;
       padding:0 18%;
@@ -631,7 +630,12 @@ text-overflow:hidden;
 
   
   @media only screen and (max-width:740px) {
-  
+    .fullscreen-header {
+      height: 65vh;
+      background-position-x: 60%;
+      background-position-y: bottom;
+      text-align: center;
+    }
     .filterBar-container {
       width: 100%;
       height: 12rem;
