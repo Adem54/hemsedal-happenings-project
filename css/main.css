@@ -767,6 +767,10 @@ textarea, input[type="datetime-local"] {
   color: #828c96;
 }
 
+div#app {
+  overflow: hidden;
+}
+
 .fullscreen-header {
   height: 85vh;
   /*3be8b0    00aeef*/
