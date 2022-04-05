@@ -67,7 +67,6 @@ Component olarak tuttugumuz yapilarimiz olan carosel, slider,card,icon,button,ti
 components are like "mini" layouts. Styles for small, reusable pieces of the site should reside here (think buttons, forms, profile pictures, etc.)
 */
 .btnUserPage {
-  font-size: .9333em;
   line-height: 1.2857em;
   font-weight: 700;
   border: none;
@@ -75,33 +74,15 @@ components are like "mini" layouts. Styles for small, reusable pieces of the sit
   font-family: "Source Sans Pro", sans-serif;
   cursor: pointer;
   color: #fff;
-}
-
-.clean-btn {
   background-color: #ff6600;
   border-radius: 0.4rem;
   border: 1px solid;
   padding: .46rem;
 }
 
-.btnUserPage a {
-  text-decoration: none;
-  color: #fff;
-  padding: .5rem;
-  border: 1px solid;
-  background-color: #ff6600;
-  border-radius: 0.4rem;
-}
-
-.btnUserPage a:hover {
+.btnUserPage:hover {
   color: #ff6600;
   background-color: #fff;
-}
-
-.clean-btn:hover {
-  color: #ff6600;
-  background-color: #fff;
-  border-color: #ff6600;
 }
 
 .form-element, .form-date {
@@ -935,7 +916,6 @@ textarea, input[type="datetime-local"] {
 
 @media only screen and (min-width: 1700px) {
   .slider-container {
-    padding: 1rem;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;

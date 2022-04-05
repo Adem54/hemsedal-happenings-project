@@ -2,6 +2,7 @@ function updateUserView() {
   
 
   document.getElementById("app").innerHTML = `  
+
     ${createHeaderTopHtml()}
     ${createEkstraPaidSlider()}
 ${createSearchHappeningBar()}
@@ -12,6 +13,8 @@ ${
 }
 ${createFilterButtons()}
 ${createHappeningList()}
+
+
   `;
  
 }
@@ -36,7 +39,7 @@ function createHeaderTopHtml() {
       ">
         <li><a class="nav__list-item" href="">Hjem</a></li>
         <li>
-          <a class="nav__list-item create-happening-btn " href="#adminPage"
+          <a class="nav__list-item create-happening-btn " 
           onclick="model.app.page='admin'; updateView()"
           >
             <span class="icon-plus"> </span>
