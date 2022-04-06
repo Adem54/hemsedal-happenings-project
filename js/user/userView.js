@@ -269,7 +269,7 @@ class="filterBar-container"
 
   let categoryIconBtn = `
     
-    <a href="#" style="text-decoration:none" id="category-toggle" for="kategori" onclick="toggleCategory(event)">
+    <a href="#" style="text-decoration:none; color:#000" id="category-toggle" for="kategori" onclick="toggleCategory(event)">
     <input
     class="category-input"
     value="Kategori"
