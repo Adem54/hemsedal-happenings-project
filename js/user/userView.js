@@ -1,8 +1,8 @@
 function updateUserView() {
-  
-
+  //onclick="closetoggleCategoryBox(event);
+// onclick="model.inputs.userPage.isCategoryBtnClicked=false; updateView()
   document.getElementById("app").innerHTML = `  
-
+<div  onclick="closetoggleCategoryBox(event)" >
     ${createHeaderTopHtml()}
     ${createEkstraPaidSlider()}
 ${createSearchHappeningBar()}
@@ -14,7 +14,7 @@ ${
 ${createFilterButtons()}
 ${createHappeningList()}
 
-
+</div>
   `;
  
 }
@@ -22,7 +22,8 @@ ${createHappeningList()}
 function createMobilMenu(){
   return `
     <a class="nav-mobil-icon" onclick="showMobilMenu()">
-      <i class="fa-solid fa-bars"></i>
+    ${model.inputs.userPage.isMobilToggleMenu ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>'}
+     
     </a> 
   `;
 }
@@ -39,7 +40,7 @@ function createHeaderTopHtml() {
       ">
         <li><a class="nav__list-item" href="">Hjem</a></li>
         <li>
-          <a class="nav__list-item create-happening-btn " 
+          <a href="#" class="nav__list-item create-happening-btn " 
           onclick="model.app.page='admin'; updateView()"
           >
             <span class="icon-plus"> </span>
@@ -72,10 +73,12 @@ function createEkstraPaidSlider() {
     <section class="slider-container extraPaid-container">
     ${createReadMoreModal()}
     `;
-
+    let result=getHappeningsFromStorage().sort((a,b)=>{
+      return new Date(a.happeningStartDate)-new Date(b.happeningStartDate)
+    });
 
   let item = ``;
-  let extraPaidHappenings = getHappeningByPaymentType(getHappeningsFromStorage(), 3);
+  let extraPaidHappenings = getHappeningByPaymentType(result, 3);
 
 
   for (let i = 0; i < extraPaidHappenings.length; i++) {
@@ -193,8 +196,10 @@ function createSearchHappeningBar() {
   let searchHappeningBar = ``;
   searchHappeningBar += `
     <div class="filterBar-title"><h2>Søk Happening</h2></div>
-<section class="filterBar-container">
+<section
+class="filterBar-container"
 
+>
 <div class="filterBar-subcontainer">
 
   <div class="filterBar-container-div">
@@ -214,11 +219,9 @@ function createSearchHappeningBar() {
                 ? model.inputs.userPage.chosenDateFrom
                 : (this.value = now.toISOString().slice(0, 16))
             }"
-            onchange="model.inputs.userPage.chosenDateFrom=this.value;
-           
-            "
+            onchange="getStartDate(event)"
+            onClick="stopPropagation(event)"
             class="input date-field" type="datetime-local" placeholder="Start dato"
-           
             >
           </div>
         </div>
@@ -241,10 +244,9 @@ function createSearchHappeningBar() {
             ? model.inputs.userPage.chosenDateTo
             : (this.value = now.toISOString().slice(0, 16))
         }"
-        onchange="model.inputs.userPage.chosenDateTo=this.value"
-        class="input date-field" type="datetime-local" placeholder="Slutt dato"
-        
-        >
+        onchange="getEndDate(event)"
+        onClick="stopPropagation(event)"
+        class="input date-field" type="datetime-local" placeholder="Slutt dato"  >
       </div>
     </div>
 </div>
@@ -260,7 +262,6 @@ function createSearchHappeningBar() {
     
 <div class="filterBar-container-div">
 
-
   <div class="category-container">
     <div class="filterBar-container__item  category_filter">
      <span class="category_label date-title"> Kategori</span>
@@ -268,19 +269,18 @@ function createSearchHappeningBar() {
 
   let categoryIconBtn = `
     
-    <a for="kategori" onclick="model.inputs.userPage.isCategoryBtnClicked=!model.inputs.userPage.isCategoryBtnClicked; updateView() "
-   
-    >
+    <a href="#" style="text-decoration:none" id="category-toggle" for="kategori" onclick="toggleCategory(event)">
     <input
     class="category-input"
     value="Kategori"
-     style="border:none; outline:none " id="kategori" type="text" >
+     style="border:none; outline:none" id="kategori" type="text" />
+ 
     <i class="fa-solid category-up-down fa-angle-${
       model.inputs.userPage.isCategoryBtnClicked ? "up" : "down"
     }"></i>
-    
-    
     </a>
+
+ 
     
     `;
 
@@ -329,7 +329,7 @@ function createMultipleChoiceCategory() {
   <div class="category_list__item  " >
     <input ${getChecked(model.inputs.userPage.isSelectedAll)} 
     type="checkbox"
-    onclick="selectAllOrNone(this.checked)" >
+    onclick="selectAllOrNone(this.checked);stopPropagation(event)" >
     <label> Select All</label>
   </div>   `;
 
@@ -342,7 +342,7 @@ function createMultipleChoiceCategory() {
    <div class="category_list__item  " >
     <input ${getChecked(
       category.isSelected
-    )}  onclick="toggleCategorySelected(${category.id})" type="checkbox" >
+    )}  onclick="toggleCategorySelected(${category.id}); stopPropagation(event)" type="checkbox" >
     <label> ${category.title}</label>
   </div> 
    
@@ -387,8 +387,11 @@ function createHappeningList() {
 
   let { categories } = model.inputs.userPage;
   let { chosenDateFrom, chosenDateTo } = model.inputs.userPage;
+  let result=getHappeningsFromStorage().sort((a,b)=>{
+    return new Date(a.happeningStartDate)-new Date(b.happeningStartDate)
+  });
   let happeningsWithoutExtraPaid = getHappeningAsideFromExtraPaid(
-  getHappeningsFromStorage()
+  result
   );
   //searchHappenings working fra begynnelsen
   let getFilteredData = searchHappenings(
@@ -402,7 +405,8 @@ function createHappeningList() {
 
   happeningList += `
    
-<section class="happenings">
+<section class="happenings" 
+>
 <div class=" slider-container nonExtraPaidContainer ">
 ${createReadMoreModal()}
 
@@ -414,9 +418,6 @@ ${createReadMoreModal()}
 
   for (let i = 0; i < getFilteredData.length; i++) {
     let happening = getFilteredData[i];
-    console.log("happening: ",happening);
-
-    console.log("happeningsUrl: ",happening.imageUrl);
     let category = getCategoryById(
       model.inputs.userPage.categories,
       happening.categoryId

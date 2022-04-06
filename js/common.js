@@ -13,7 +13,7 @@ function getHappeningsFromStorage(){
     return happenings;
   }
   
-  console.log("happenings: ", getHappeningsFromStorage())
+
   
   function addHappeningToStorage(newHappening){
   let happenings=getHappeningsFromStorage();

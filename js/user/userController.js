@@ -85,7 +85,7 @@ function selectAllOrNone(selectAll) {
 
 function findCategory(id) {
   return model.inputs.userPage.categories.find(
-    (category) => category.id === id
+    (category) => category.id === parseInt(id)
   );
 }
 //for dongusu ile dondurdugumuz her bir checkbox
@@ -110,43 +110,48 @@ function getselectedCategoryCountNumber(categories) {
   return selectedCategories.length;
 }
 
-//Date filtering
-//Bu fonksiyonun ilk parametresine verilen tarih 2.parametreye verilen tarihten kucuk ise true sonucunu verecek yani, bu bize ornegin 2.paremtreye kullanicinin girdigi tarih giriliyor 1.parametreye de array de donen tarihi yazacagiz ve sonunda, array icindeki tarihlerden kullanicinin girdigi startdate ten sonra gelen tarihleri getirecegiz....Yani startdate < arraysDate ama endDate>arraysDate
-//date1<=date2=>true
-function compareYearMonthDay(date1, date2) {
-  let date1Year = date1.slice(0, 4);
-  let date1Month = date1.slice(5, 7);
-  let date1Day = date1.slice(8, 10);
-  let date2Year = date2.slice(0, 4);
-  let date2Month = date2.slice(5, 7);
-  let date2Day = date2.slice(8, 10);
+function compareYearMonthDay(date1, date2) {				
+  let date1Year = date1.slice(0, 4);				
+  let date1Month = date1.slice(5, 7);				
+  let date1Day = date1.slice(8, 10);				
+  let date2Year = date2.slice(0, 4);				
+  let date2Month = date2.slice(5, 7);				
+ let date2Day = date2.slice(8, 10);				
+         
+  if (date1Year < date2Year) {				
+  //Eger yil kucuk ise digerlerine bakmaya gerek yok				
+ return true;				
+ } else if (date1Year == date2Year && date1Month < date2Month) {				
+return true;				
+  } else if (				
+  date1Year == date2Year &&				
+  date1Month == date2Month &&				
+ date1Day <= date2Day				
+ ) {				
+    return true;				
+  } else {				
+  return false;				
+  }				
+ }		
 
-  if (date1Year < date2Year) {
-    //Eger yil kucuk ise digerlerine bakmaya gerek yok
+function compareTwoDates(date1,date2){
+  if(new Date(date1).getTime() <= new Date(date2).getTime()){
     return true;
-  } else if (date1Year == date2Year && date1Month < date2Month) {
-    return true;
-  } else if (
-    date1Year == date2Year &&
-    date1Month == date2Month &&
-    date1Day <= date2Day
-  ) {
-    return true;
-  } else {
+  }else {
     return false;
   }
 }
 
 function getDateFromStartDate(happenings, startDate) {
   let result = happenings.filter((happening) =>
-    compareYearMonthDay(startDate, happening.happeningStartDate)
+  compareYearMonthDay(startDate, happening.happeningStartDate)
   );
   return result;
 }
 
 function getDateToEndDate(happenings, endDate) {
   let result = happenings.filter((happening) =>
-    compareYearMonthDay(happening.happeningStartDate, endDate)
+  compareYearMonthDay(happening.happeningStartDate, endDate)
   );
   return result;
 }
@@ -272,7 +277,6 @@ function getStartEndDateCurrentValue() {
 //Unutmayalim bizim search islemindeki happenings dedgimiz extrabetalt disinda kalan happenigs ler cunku extra betalt happenings leri biz en ustte listeledik
 function searchHappenings(happenings, categories, startDate, endDate) {
   //starDate secilmis mi onu cek et
-console.log("filterBtnState: ", model.inputs.userPage.filterBtnState);
   if (model.inputs.userPage.filterBtnState == "this-month") {
     let { currentDate, oneMonthLaterDate } = getCurrentAndOneMonthLaterDates();
     // model.inputs.userPage.chosenDateFrom=currentDate;
@@ -286,11 +290,6 @@ console.log("filterBtnState: ", model.inputs.userPage.filterBtnState);
   } else if (model.inputs.userPage.filterBtnState == "tomorrow") {
     let { currentDate, futureDate } = getDateSomeDaysLater(1);
     //Som default får vi en date en måneds videre
-
-    console.log(
-      "getDateBetweenTwoDates: ",
-      getDateBetweenTwoDates(happenings, currentDate, futureDate)
-    );
     return getDateBetweenTwoDates(happenings, currentDate, futureDate);
   }
 
@@ -348,4 +347,33 @@ function getHappeningsByCheckedCategory(happenings, categories) {
 function showMobilMenu(){
   model.inputs.userPage.isMobilToggleMenu=!model.inputs.userPage.isMobilToggleMenu;
   updateView();
+}
+
+
+function toggleCategory(event){
+  model.inputs.userPage.isCategoryBtnClicked=!model.inputs.userPage.isCategoryBtnClicked; 
+  event.preventDefault();
+  event.stopPropagation();
+   updateView() 
+}
+
+
+function getStartDate(event){
+  model.inputs.userPage.chosenDateFrom=event.target.value;
+}
+
+function getEndDate(event){
+  model.inputs.userPage.chosenDateTo=event.target.value;
+}
+
+function closetoggleCategoryBox(event){
+  if(!model.inputs.userPage.isCategoryBtnClicked){
+         return;
+  }
+  model.inputs.userPage.isCategoryBtnClicked=false;
+  updateView()
+}
+
+function stopPropagation(event){
+  event.stopPropagation();
 }

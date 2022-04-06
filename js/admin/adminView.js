@@ -122,6 +122,13 @@ reader.readAsDataURL(event.target.files[0]);
 
 function createMainCategoryHtml(){
 const {categories}=model.inputs.userPage;
+let choosenCategory;
+
+if(model.inputs.adminPage.happening.categoryId.name){
+   choosenCategory=findCategory(model.inputs.adminPage.happening.categoryId.name);
+}
+
+
 let happeningMainCategory=``;
 happeningMainCategory+=`
 <div class="happeningformRow happeningMainCategory">
@@ -129,10 +136,10 @@ happeningMainCategory+=`
 <select    class="form-element mainCategory  input-top-mrgn
 ${model.inputs.adminPage.isSubmitted ? showValidationStyle(model.inputs.adminPage.happening.categoryId.isValidate,"errorStyle","successStyle"): "" }
 " name="mainCategory" id="mainCategory"
-onchange="model.inputs.adminPage.happening.categoryId.name=this.value"
+onchange="model.inputs.adminPage.happening.categoryId.name=this.value; updateView()"
 >
 
-<option selected disabled hidden>Velg kategori</option>
+<option selected disabled hidden>${model.inputs.adminPage.happening.categoryId.name ? choosenCategory.title : 'Velg kategori'}</option>
 `;
 
 for(let i=0; i<categories.length; i++){
@@ -215,7 +222,7 @@ class="form-date happeningDateInput
 ${model.inputs.adminPage.isSubmitted ? showValidationStyle(model.inputs.adminPage.happening.happeningStartDate.isValidate,"errorStyle","successStyle"): "" }"
  id="happeningStart"  type="datetime-local"
 
-value="${this.value= now.toISOString().slice(0, 16)}"
+value="${this.value=model.inputs.adminPage.happening.happeningStartDate.name ? (model.inputs.adminPage.happening.happeningStartDate.name+"T"+ model.inputs.adminPage.happening.happeningStartTime.name) :  now.toISOString().slice(0, 16)}"
 onchange="getHappeningStartDate(this);"
 
 />
@@ -231,7 +238,7 @@ class="form-date happeningDateInput
 ${model.inputs.adminPage.isSubmitted ? showValidationStyle(model.inputs.adminPage.happening.happeningEndDate.isValidate,"errorStyle","successStyle"): "" }
 " id="happeningEnd"  type="datetime-local"
 
-value="${this.value= now.toISOString().slice(0, 16)}"
+value="${this.value=model.inputs.adminPage.happening.happeningEndDate.name ? (model.inputs.adminPage.happening.happeningEndDate.name +"T"+ model.inputs.adminPage.happening.happeningEndTime.name) : now.toISOString().slice(0, 16)}"
 onchange="getHappeningEndDate(this)"
 />   
 ${model.inputs.adminPage.isSubmitted ? showValidationMessage(model.inputs.adminPage.happening.happeningEndDate.isValidate,"happeningEndDate er påkrevd") : ""}

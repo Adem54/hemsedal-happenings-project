@@ -512,19 +512,19 @@ text-overflow:hidden;
      border-radius: .5rem;
      border: none;
      background-color: #fff;
-     border: 2px solid #75FF33 ;
+     border: 2px solid #008374 ;
      font-size: 1.2rem;
  }
  
  .filter-btn:hover {
-     background-color:#75FF33;
+     background-color:#008374;
      color: #fff;
      border: 2px solid #000 ;
 
  }
 
  .active {
-  background-color:#75FF33;
+  background-color:#008374;
   color: #fff;
   border: 2px solid #000 ;
  }
@@ -621,7 +621,7 @@ text-overflow:hidden;
         }
           
         .active {
-          background-color:#75FF33;
+          background-color:#008374;
           color: #fff;
           border: 2px solid #000 ;
          }
@@ -673,7 +673,7 @@ text-overflow:hidden;
           color: #000;
       }
       .active {
-        background-color:#75FF33;
+        background-color:#008374;
         color: #fff;
         border: 2px solid #000 ;
        }
@@ -700,7 +700,7 @@ text-overflow:hidden;
             }
  
             .active {
-              background-color:#75FF33;
+              background-color:#008374;
               color: #fff;
               border: 2px solid #000 ;
              }
@@ -744,7 +744,6 @@ text-overflow:hidden;
       @media screen and (max-width: 600px) {
 
         .nav-mobil-icon {
-          // visibility: hidden;
           display: block;
           color: #fff;
           position: absolute;
@@ -787,7 +786,7 @@ text-overflow:hidden;
           white-space: nowrap;
       }
       .active {
-        background-color:#75FF33;
+        background-color:#008374;
         color: #fff;
         border: 2px solid #000 ;
        }

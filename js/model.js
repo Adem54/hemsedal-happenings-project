@@ -133,7 +133,7 @@ const model={
             imageUrl:"https://i.ytimg.com/vi/CN8-Uf2yrqA/maxresdefault.jpg",
             categoryId:5,
             paymentTypeId:1,
-            happeningStartDate:"2022-04-12",
+            happeningStartDate:"2022-04-13",
             happeningStartTime:"20:00",
             happeningEndDate:"2022-04-15",
             happeningEndTime:"23:55",

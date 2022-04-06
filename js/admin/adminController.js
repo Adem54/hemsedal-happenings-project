@@ -14,13 +14,13 @@ function choosePaymentType(id){
 
   //Bir de parametreye model gondersek o zaman tek fonksiyonda sanki hallebebiliriz gibi...
 function getHappeningStartDate(selectedDate){
-  console.log("happening startDate")
+  console.log("happening startDate",selectedDate.value)
     let startDateTime=selectedDate.value;
     let getDate=startDateTime.slice(0,10);
     let getTime=startDateTime.slice(11,16);
     model.inputs.adminPage.happening.happeningStartDate.name=getDate;
     model.inputs.adminPage.happening.happeningStartTime.name=getTime;
-    //console.log("happpening:", model.inputs.adminPage.happening);
+  
     }
     
     function getHappeningEndDate(selectedDate){
@@ -207,4 +207,6 @@ function checkAllRequiredFields(happening){
     updateView();
   }
   
+ 
+
  
