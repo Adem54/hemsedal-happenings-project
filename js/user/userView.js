@@ -273,15 +273,10 @@ class="filterBar-container"
     <input
     class="category-input"
     value="Kategori"
-     style="border:none; outline:none" id="kategori" type="text" />
- 
-    <i class="fa-solid category-up-down fa-angle-${
-      model.inputs.userPage.isCategoryBtnClicked ? "up" : "down"
+     style="border:none;  outline:none" id="kategori" type="text" />
+    <i  class="fa-solid category-up-down fa-angle-${model.inputs.userPage.isCategoryBtnClicked ? "up" : "down"
     }"></i>
     </a>
-
- 
-    
     `;
 
   searchHappeningBar +=

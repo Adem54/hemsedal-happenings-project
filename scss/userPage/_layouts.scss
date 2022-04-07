@@ -11,19 +11,13 @@ div#app{
     background-size: cover;
     background-position-x: 90%;
     background-position-y: bottom;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+    @include flexCenter(column);
   }
 
 
   .nav-top {
     background-color: $primary-color;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flexCenter(row,space-evenly);
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +25,6 @@ div#app{
     z-index: 1;
     text-align: center;  
     font-size: 1rem;
-
   }
 
   @media only screen and (min-width:1700px) {
@@ -46,9 +39,7 @@ div#app{
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flexCenter;
   }
 
 
@@ -63,9 +54,7 @@ div#app{
 .main-title {
   width: 100%;
   text-align: center;
-display: flex;
-justify-content: center;
-align-items: center;
+@include flexCenter;
 margin-top: 2rem;
 margin-bottom: 1rem;
 color: #fff;
@@ -137,24 +126,12 @@ border-radius: 1rem;
 }
 .slider-container {
 width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+@include flexCenter;
  flex-wrap: wrap;
 position: relative;
 
 }
-// .extraPaid-container {
 
-// }
-
-// .nonExtraPaidContainer {
-
-// }
-
-
-//   //Bu bizim image-cart imizdir.....
-//   /* eger biz kendimiz width rem i vermezsek en sagda kalan birazcik kucuk kaliyor ve icindeki desgin kayiyor....*/
   .cart-container {
  width: 22rem;
  margin:.5rem;
@@ -172,11 +149,6 @@ position: relative;
   }
 
   @media only screen and (min-width:1700px) {
-    .slider-container { 
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
 
     .cart-container {
       width: 27rem;
@@ -207,9 +179,7 @@ position: relative;
 
   .icon-container {
     background-color: #fff;
-    display: flex;
-align-items: center;
-justify-content: center;
+    @include flexCenter;
 /*width,heigh boyutlari ekrana gore degismesi gerekecek*/
     width: 2.2rem;
     height: 2.2rem;
@@ -238,20 +208,14 @@ justify-content: center;
   .cart-calender {
     width: 100%;   
     height: 40%;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+    @include flexCenter(row,space-between);
     
     
     
   }
 
   .cart-calender-date {
-      
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter(column);
     background-color: #de302f;
     width: 3rem;
     height: 3rem;
@@ -260,7 +224,7 @@ justify-content: center;
     color: #fff;
     margin-left: 1rem;
   }
-//Bu  cart-calender-date in altinda olmalidr yoksa bu kod calismaz extra paid ve digerlerini bunun la ayiriyoruz..
+
   .nonExtraPaid {
     background-color: #fff;
     color: #000;
@@ -280,7 +244,6 @@ justify-content: center;
     font-size: 0.8rem;
     line-height: 1.5em;
     display: block;
-
     font-weight: 700;
 
     /* color: #de302f; */
@@ -291,7 +254,7 @@ justify-content: center;
 
   /*Bu yazi rengini al bunu cok fazla kullanacagiz*/
   .cart-calender-content {
-width: 80%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -306,7 +269,6 @@ text-overflow:hidden;
 
   .calender-icon{
    color: #de302f;
-
   }
 
   .cart-calender-content>h3 {
@@ -340,9 +302,7 @@ text-overflow:hidden;
   }
 
   .read-more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     background-color: #de302f;
     padding: 0.5rem;
     width: 30%;
@@ -376,10 +336,7 @@ text-overflow:hidden;
     background-color: #465f7b;
     padding:0 25%;
     color: #fff;
-    display: flex;
-    justify-content: flex-start;
-    align-items:center;
-   
+    @include flexCenter(row,flex-start);
    }
    
 
@@ -413,9 +370,7 @@ text-overflow:hidden;
        border-radius: 0.2rem;
        cursor: pointer;
        margin-right: .2rem;
-       display: flex;
-       justify-content:space-evenly;
-       align-items:center;     
+       @include flexCenter(row,space-evenly);
          
    }
 
@@ -431,15 +386,12 @@ text-overflow:hidden;
 
    
    .filterBar-title {
-    margin-left: -70%; 
-    display: flex;
-     justify-content: space-around;
-     align-items: center;
+     margin-left: -70%; 
+     @include flexCenter(row,space-around);
      position: relative;
    }
    
    .filterBar-title > h2 {
-   
      background-color: #465f7b;
      color: #fff;
      padding:1rem 1.5rem;
@@ -460,15 +412,13 @@ text-overflow:hidden;
   
    
    .filterBar-container__item {
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
+   @include flexCenter(row,flex-start);
    }
    .date-title {
     width:6.2rem;
     text-align: right;
-  font-size: 1rem;
-  margin-right: .5rem;
+    font-size: 1rem;
+    margin-right: .5rem;
     }
    .input {
     width: 80%;
@@ -480,10 +430,7 @@ text-overflow:hidden;
 .filterBtns-wrapper {
   padding:0 18%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
+  @include flexCenter(column);
  }
  
 .happenings-title {
@@ -491,18 +438,14 @@ text-overflow:hidden;
 }
 
  .filterBtns-container {
-     display: flex;
      width: 100%;
-     justify-content: center;
-     align-items: center;
+     @include flexCenter;
      padding:1.8% 10%;
-
      border-top-left-radius:.5rem ;
      border-top-right-radius: .5rem;
     //  background-color:#A03033;
      
      position: relative;
-  
  }
  
  .filter-btn {
@@ -512,19 +455,18 @@ text-overflow:hidden;
      border-radius: .5rem;
      border: none;
      background-color: #fff;
-     border: 2px solid #008374 ;
+     border: 2px solid $filter-btn-color ;
      font-size: 1.2rem;
  }
  
  .filter-btn:hover {
-     background-color:#008374;
+     background-color:$filter-btn-color;
      color: #fff;
      border: 2px solid #000 ;
-
  }
 
  .active {
-  background-color:#008374;
+  background-color:$filter-btn-color;
   color: #fff;
   border: 2px solid #000 ;
  }
@@ -532,7 +474,7 @@ text-overflow:hidden;
 
  
  .happenings {
- margin-top: 1rem;
+   margin-top: 1rem;
    padding:0 10%;
  }
  
@@ -545,67 +487,37 @@ text-overflow:hidden;
   }
 
   @media only screen and (max-width:1380px){
-    
     .happenings {
- margin-top: 1rem;
-
+      margin-top: 1rem;
       padding: 0 2%;
-
-    
     }
-    
-    .slider-container { 
-     //Bunu oynatma dengesi kaciyor
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    
     .cart-container {
       width: 20rem;
       margin:.5rem;
       height:30rem;
        }
-    
-    
-      }
+     }
 
-
-      @media only screen and (max-width:1100px){
+     @media only screen and (max-width:1100px){
         .fullscreen-header {
           height: 70vh;    
         }
         .happenings {
-        margin-top: 1rem;
+          margin-top: 1rem;
           padding: 0 2%;
         }
-        
-        .slider-container { 
-         //Bunu oynatma dengesi kaciyor
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          
-        }
-        
-        .cart-container {
+     .cart-container {
           width: 24rem;
           margin:.5rem;
           height:30rem;
            }
-        
-        
           }
 
-
-
-  @media only screen and (max-width:940px){
-   
-    .filterBar-container {
+ @media only screen and (max-width:940px){
+      .filterBar-container {
       width: 100%;
       padding:0 18%;
-    
-     }
+    }
      .date-title {
       font-size: .9rem;
       margin-right: 0.3rem;
@@ -621,7 +533,7 @@ text-overflow:hidden;
         }
           
         .active {
-          background-color:#008374;
+          background-color:$filter-btn-color;
           color: #fff;
           border: 2px solid #000 ;
          }
@@ -641,22 +553,17 @@ text-overflow:hidden;
       width: 100%;
       height: 12rem;
       padding:0 10%;
-      display: flex;
-      align-items: center;
+     @include flexCenter;
      }
 
      .filterBar-container-div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flexCenter(column);
       margin-top: .8rem;
     
     }
 
     .filterBar-container__item {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      @include flexCenter(row,flex-start);
       margin-bottom: .4rem;
       margin-left: 0rem;
       
@@ -673,7 +580,7 @@ text-overflow:hidden;
           color: #000;
       }
       .active {
-        background-color:#008374;
+        background-color:$filter-btn-color;
         color: #fff;
         border: 2px solid #000 ;
        }
@@ -694,23 +601,16 @@ text-overflow:hidden;
             border-radius: 0.2rem;
             cursor: pointer;
             margin-right: .2rem;
-            display: flex;
-            justify-content:space-between;
-         
+         @include flexCenter(row,space-between);
             }
  
             .active {
-              background-color:#008374;
+              background-color:$filter-btn-color;
               color: #fff;
               border: 2px solid #000 ;
              }
 
-             .slider-container { 
-              //Bunu oynatma dengesi kaciyor
-               justify-content: center;
-               align-items: center;
-               flex-wrap: wrap;
-             }
+         
              
              .cart-container {
                width: 20rem;
@@ -724,9 +624,7 @@ text-overflow:hidden;
         margin: 0;
         padding: 0;
         list-style-type: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
       }
       .nav-mobil-icon {
         // visibility: hidden;
@@ -764,9 +662,8 @@ text-overflow:hidden;
         }
       
         .nav__list {
-          
           margin-left: -2rem;
-      
+
         }
         .fullscreen-header {
           height: 55vh;
@@ -786,44 +683,41 @@ text-overflow:hidden;
           white-space: nowrap;
       }
       .active {
-        background-color:#008374;
+        background-color:$filter-btn-color;
         color: #fff;
         border: 2px solid #000 ;
        }
       
       }
-.date-field {
-  padding:.2rem 1.2rem;
-  border-radius: 0.2rem;
-  border:none;
-  outline: none;
- 
-}
+      .date-field {
+        padding:.2rem 1.2rem;
+        border-radius: 0.2rem;
+        border:none;
+        outline: none;
+      
+      }
 
-.select-month {
-  width: 166%;
-  padding:.3rem 1.2rem;
-  
+      .select-month {
+        width: 166%;
+        padding:.3rem 1.2rem;
+      }
 
-}
+      .category-input {
+      min-height: 100%;
+      top: -.1rem;
+      position: relative;
+      cursor: pointer;
+      }
 
-.category-input {
- min-height: 100%;
-top: -.1rem;
-position: relative;
-cursor: pointer;
-}
+    .category-up-down:hover {
+      color: #de302f;
+    }
 
-.category-up-down:hover {
-  color: #de302f;
+      .fa-solid{
+      margin-right: 0.5rem;
+      }
+      
 
-}
-
-
-   
-   .fa-solid{
-   margin-right: 0.5rem;
-   }
    
 
   
