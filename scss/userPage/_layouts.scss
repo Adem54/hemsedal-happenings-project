@@ -27,6 +27,8 @@ div#app{
     font-size: 1rem;
   }
 
+
+
   @media only screen and (min-width:1700px) {
     .nav-top {
       font-size: 1.4rem;
@@ -47,6 +49,7 @@ div#app{
     color: #fff;
     font-size: 2.5rem;
     font-family: 'Lemonada', cursive;
+    animation: textFromLeft 1s;
 }
 
 
@@ -86,6 +89,12 @@ position: relative;
 .next-previous span:hover {
   background: #222;
   color: white;
+}
+
+.cart-container:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0px 0px 13px -1px rgba(0,0,0,0.18);
+  
 }
 
 @media only screen and (min-width:1700px) {

@@ -464,6 +464,30 @@ textarea, input[type="datetime-local"] {
 }
 
 /*1700 px or larger*/
+@keyframes textFromLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  70% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes textFromRight {
+  0% {
+    transform: translateX(50%);
+  }
+  70% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .nav__list-item {
   height: 3rem;
   /*Navbar in bu boyutu en buyuk ekran icin olacak*/
@@ -889,6 +913,7 @@ div#app {
   color: #fff;
   font-size: 2.5rem;
   font-family: 'Lemonada', cursive;
+  animation: textFromLeft 1s;
 }
 
 .main-title {
@@ -927,6 +952,11 @@ div#app {
 .next-previous span:hover {
   background: #222;
   color: white;
+}
+
+.cart-container:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0px 0px 13px -1px rgba(0, 0, 0, 0.18);
 }
 
 @media only screen and (min-width: 1700px) {
