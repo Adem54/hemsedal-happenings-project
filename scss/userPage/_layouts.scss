@@ -643,23 +643,19 @@ text-overflow:hidden;
           padding:0 2%;
           display: flex;
           justify-content: flex-start;
-         align-items: center;
+          align-items: center;
         //  @include flexCenter;
-        background-color: red;
+           background-color: red;
          }
+
+         .input {
+          width: 79%;
+          }
+
     
       }
 
-      @media only screen and (max-width:300px) {
-        .filterBar-container {
-          padding:0 2%;
-          display: flex;
-          justify-content: flex-start;
-         align-items: center;
-         background-color: teal;
-        //  @include flexCenter;
-         }
-      }
+     
       .nav__list {
         margin-block-end: 0;
         margin-block-start: 0;
