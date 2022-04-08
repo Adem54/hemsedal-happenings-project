@@ -560,12 +560,17 @@ text-overflow:hidden;
     .filterBar-container {
       width: 100%;
       height: 12rem;
-      padding:0 0%;
-     @include flexCenter(row,flex-start);
+      padding:0 2%;
+      display: flex;
+      justify-content: center;
+     align-items: center;
+    //  @include flexCenter;
      }
 
-     .filterBar-container-div {
-      @include flexCenter(column);
+     
+
+     .filterBar-container-div { 
+      @include flexCenter(column,flex-start);
       margin-top: .8rem;
     
     }
@@ -625,6 +630,24 @@ text-overflow:hidden;
                margin:.5rem;
                height:30rem;
                 }
+
+               //viktig..
+                 .category_label {
+                   margin-left: -1rem;
+                 }
+            
+      }
+
+      @media only screen and (max-width:400px) {
+        .filterBar-container {
+       
+          padding:0 2%;
+          display: flex;
+          justify-content: flex-start;
+         align-items: center;
+        //  @include flexCenter;
+         }
+    
       }
       .nav__list {
         margin-block-end: 0;
@@ -647,6 +670,10 @@ text-overflow:hidden;
         animation: textFromLeft 1s;
       }
 
+
+      @media screen and (max-width:400px){
+        
+      }
       @media screen and (max-width: 600px) {
 
         .nav-mobil-icon {

@@ -248,7 +248,6 @@ class="filterBar-container">
       <div class="filterBar-container__item-category  category_field_selectBtn  calendar"  >     `;
 
   let categoryIconBtn = `
-    
     <a href="#" style="text-decoration:none; color:#000" id="category-toggle" for="kategori" onclick="toggleCategory(event)">
     <input
     class="category-input"

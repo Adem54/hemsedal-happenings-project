@@ -1418,15 +1418,14 @@ text-overflow:hidden;
   .filterBar-container {
     width: 100%;
     height: 12rem;
-    padding: 0 10%;
+    padding: 0 2%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
   }
   .filterBar-container-div {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     margin-top: .8rem;
@@ -1481,6 +1480,18 @@ text-overflow:hidden;
     width: 20rem;
     margin: .5rem;
     height: 30rem;
+  }
+  .category_label {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .filterBar-container {
+    padding: 0 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 
