@@ -1,19 +1,17 @@
 function updateUserView() {
-  //onclick="closetoggleCategoryBox(event);
-// onclick="model.inputs.userPage.isCategoryBtnClicked=false; updateView()
+  
   document.getElementById("app").innerHTML = `  
 <div  onclick="closetoggleCategoryBox(event)" >
     ${createHeaderTopHtml()}
     ${createEkstraPaidSlider()}
-${createSearchHappeningBar()}
-${
-  model.inputs.userPage.isCategoryBtnClicked
-    ? createMultipleChoiceCategory()
-    : ""
-}
-${createFilterButtons()}
-${createHappeningList()}
-
+    ${createSearchHappeningBar()}
+    ${
+      model.inputs.userPage.isCategoryBtnClicked
+        ? createMultipleChoiceCategory()
+        : ""
+    }
+    ${createFilterButtons()}
+    ${createHappeningList()}
 </div>
   `;
  
@@ -63,7 +61,6 @@ function createHeaderTopHtml() {
 
 
 function createEkstraPaidSlider() {
-  //random picture icindeki ne ile ilgili resmin gelecegini dinamik yapmak icin ? sonraki kisma kategori ismini random bir sekilde getirecegiz....
   let ekstraPaidSlider = ``;
   ekstraPaidSlider += `
     <div class="slider-title main-title">
@@ -103,20 +100,16 @@ function createEkstraPaidSlider() {
 <div 
 id="${extraPaidHappening.id}"
 class="cart-container">
-
-<div class="cart-image"
-
-style="
-background-image: url(
-   ${
-     extraPaidHappening.imageUrl ||
-     `https://source.unsplash.com/random/?${categoryTitleInEnglish}`
-   }
-)
-
-"
-
->
+  <div class="cart-image"
+  style="
+  background-image: url(
+    ${
+      extraPaidHappening.imageUrl ||
+      `https://source.unsplash.com/random/?${categoryTitleInEnglish}`
+    }
+  )
+  "
+  >
 <div class="announcement-icon icon-container">
 <i class="fa-solid fa-bullhorn"></i>
 </div>
@@ -128,13 +121,13 @@ background-image: url(
 
 
 <div class="cart-calender">
-<div class="cart-calender-date">
-<span class="cart-calender-day">${startDateAllFormats.day}</span>
-<span class="cart-calender-month"> ${startDateAllFormats.monthByShortText.toUpperCase()}</span>
-</div>
+  <div class="cart-calender-date">
+    <span class="cart-calender-day">${startDateAllFormats.day}</span>
+    <span class="cart-calender-month"> ${startDateAllFormats.monthByShortText.toUpperCase()}</span>
+  </div>
 
 <div class="cart-calender-content">
-<!-- <span class="cart-calender-title">Konsert</span> -->
+
 <h3>${extraPaidHappening.title}</h3>
 
 <div>
@@ -181,15 +174,12 @@ background-image: url(
     </section> </section>
   
        `;
-  /*
-   
-    */
+ 
 
   return ekstraPaidSlider;
 }
 
 function createSearchHappeningBar() {
-  //Input value yi guncel tutuyoruz bu sekilde hangi tarih filtresi secilirse o value ye yaziliyor
   getStartEndDateCurrentValue();
   const now = new Date();
   now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
@@ -197,9 +187,7 @@ function createSearchHappeningBar() {
   searchHappeningBar += `
     <div class="filterBar-title"><h2>Søk Happening</h2></div>
 <section
-class="filterBar-container"
-
->
+class="filterBar-container">
 <div class="filterBar-subcontainer">
 
   <div class="filterBar-container-div">
@@ -496,13 +484,12 @@ ${
 
  `;
   }
-
-  // <div class="box box1"> 1</div>
-
   happeningList += happeningsDiv + `</div></section> `;
-
   return happeningList;
 }
+
+ 
+
 
 
 

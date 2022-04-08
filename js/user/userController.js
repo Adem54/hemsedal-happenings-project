@@ -72,13 +72,12 @@ function translateCategoryTitleToEnglish(title = "event") {
   }
 }
 
-//selectAll=this.checked olarak veriliyor input icinden...
-//for dongusu disinda var olan selectAll checkboximizin checked durumun diger tum check box lara baglamak, daha dogrusu diger tum checkbox lari selectAll un check durumuna baglamak
+//selectAll=>this.checked tilstand
 function selectAllOrNone(selectAll) {
   model.inputs.userPage.isSelectedAll = selectAll;
   for (let i = 0; i < model.inputs.userPage.categories.length; i++) {
     let category = model.inputs.userPage.categories[i];
-    category.isSelected = selectAll; //Bu sekilde baglamis oluyoruz
+    category.isSelected = selectAll; 
   }
   updateView();
 }
@@ -88,7 +87,7 @@ function findCategory(id) {
     (category) => category.id === parseInt(id)
   );
 }
-//for dongusu ile dondurdugumuz her bir checkbox
+
 function toggleCategorySelected(id) {
   let category = findCategory(id);
   category.isSelected = !category.isSelected;
@@ -119,7 +118,6 @@ function compareYearMonthDay(date1, date2) {
  let date2Day = date2.slice(8, 10);				
          
   if (date1Year < date2Year) {				
-  //Eger yil kucuk ise digerlerine bakmaya gerek yok				
  return true;				
  } else if (date1Year == date2Year && date1Month < date2Month) {				
 return true;				
@@ -211,7 +209,6 @@ function getDateSomeDaysLater(dayNumber) {
   };
 }
 
-//Filtreleme durumlarini ayri ayri pratik fonksiyonlara donusturelim
 function filterByStartEndDatoAndCategory(
   happenings,
   categories,
@@ -219,8 +216,6 @@ function filterByStartEndDatoAndCategory(
   endDate
 ) {
   let filteredArray = getDateBetweenTwoDates(happenings, startDate, endDate);
-  //Filtered data blir filtrering etter category..
-
   return getHappeningsByCheckedCategory(filteredArray, categories);
 }
 
@@ -239,18 +234,16 @@ function getStartEndDateCurrentValue() {
     let chosenDateTo;
   switch (model.inputs.userPage.filterBtnState) {
     case "this-month":
-
       let { currentDateInputFormat, oneMonthLaterDateInputFormat } =
         getCurrentAndOneMonthLaterDates();
       model.inputs.userPage.chosenDateFrom = currentDateInputFormat;
       model.inputs.userPage.chosenDateTo = oneMonthLaterDateInputFormat;
       chosenDateFrom= model.inputs.userPage.chosenDateFrom;
       chosenDateTo=model.inputs.userPage.chosenDateTo;
-
       return {
         chosenDateFrom,
         chosenDateTo
-      }
+             }
  
     case "this-week":
       let { nowDateInputFormat, futureDateInputFormat } =
@@ -272,17 +265,9 @@ function getStartEndDateCurrentValue() {
 }
 
 
-//Bu filtrelemenin donderdigi tarihleri input formatina gore donderecek ve sadece calismasi yetecek...
-
-//Unutmayalim bizim search islemindeki happenings dedgimiz extrabetalt disinda kalan happenigs ler cunku extra betalt happenings leri biz en ustte listeledik
 function searchHappenings(happenings, categories, startDate, endDate) {
-  //starDate secilmis mi onu cek et
   if (model.inputs.userPage.filterBtnState == "this-month") {
     let { currentDate, oneMonthLaterDate } = getCurrentAndOneMonthLaterDates();
-    // model.inputs.userPage.chosenDateFrom=currentDate;
-    // model.inputs.userPage.chosenDateTo=oneMonthLaterDate;
-   
-
     return getDateBetweenTwoDates(happenings, currentDate, oneMonthLaterDate);
   } else if (model.inputs.userPage.filterBtnState == "this-week") {
     let { currentDate, futureDate } = getDateSomeDaysLater(7);
@@ -314,10 +299,6 @@ function searchHappenings(happenings, categories, startDate, endDate) {
     return getHappeningsByCheckedCategory(happenings, categories);
   } else {
     let { currentDate, oneMonthLaterDate } = getCurrentAndOneMonthLaterDates();
-    //Som default får vi en date en måneds videre
-    //    model.inputs.userPage.chosenDateFrom=currentDate;
-    //    model.inputs.userPage.chosenDateTo=oneMonthLaterDate;
-
     return getDateBetweenTwoDates(happenings, currentDate, oneMonthLaterDate);
   }
 }
@@ -328,9 +309,7 @@ function isAnyCategoryChecked(categories) {
   return result;
 }
 
-//Bu catgory filtrelemesine catgory den en az 1 tane secilirse girecek ondan dolayi oncesinde category secimi kontrol edilmeli eger kategory den en az 1 tane secilmis ise bu fonksiyona girmeli..
 function getHappeningsByCheckedCategory(happenings, categories) {
-  //Once isSelected i true olanlarin id sini bul... sonra da o id lerden happenings icinde categoryId sine bu id ler olanlari getir...
   let getCheckedCategories = categories.filter(
     (category) => category.isSelected
   );
@@ -339,7 +318,6 @@ function getHappeningsByCheckedCategory(happenings, categories) {
       return happening.categoryId == category.id;
     });
   });
-
   return result;
 }
 
@@ -356,6 +334,7 @@ function toggleCategory(event){
   event.stopPropagation();
    updateView() 
 }
+
 
 
 function getStartDate(event){

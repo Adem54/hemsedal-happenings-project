@@ -49,7 +49,6 @@ happeningTitle+=`
    <label for="title" class="formLabel"><span class="requiredStar">*</span><span class="titleText">Tittel på happening</span></label>
    <input
    autofocus
-
      class="form-element input-top-mrgn
       title  ${model.inputs.adminPage.isSubmitted ? showValidationStyle(model.inputs.adminPage.happening.title.isValidate,"errorStyle","successStyle"): "" } " type="text"
       name="title"
@@ -58,7 +57,6 @@ happeningTitle+=`
       oninput="model.inputs.adminPage.happening.title.name=this.value; "
       value="${model.inputs.adminPage.happening.title.name || ""}" />
       ${model.inputs.adminPage.isSubmitted ? showValidationMessage(model.inputs.adminPage.happening.title.isValidate,"Tittel på happening påkrevd") : ""}
-   
  </div>
 `;
 
@@ -103,21 +101,14 @@ return happeningImageFile;
 
 function readFile(event){
 let imageUrl=URL.createObjectURL(event.target.files[0]);
-console.log("imageUrl: ", imageUrl); 
-// let newUrl=imageUrl.replace('blob:','');
-// console.log("newUrl: ", newUrl);
 model.inputs.adminPage.happening.imageUrl.name=imageUrl;
-//imageFile a atadgiimz url i herhangi bir image in src sine atayarak onu gosterebiliriz...
 let reader=new FileReader();
 reader.addEventListener("load", ()=>{
   let uploaded_image=reader.result;
   console.log("uploaded_image: ", uploaded_image);
   model.inputs.adminPage.happening.imageUrl.name=uploaded_image;
-  //Bunu ise background-image:url() icinde kullanabiliyoruz
-
 })
 reader.readAsDataURL(event.target.files[0]);
-
 }
 
 function createMainCategoryHtml(){
@@ -127,7 +118,6 @@ let choosenCategory;
 if(model.inputs.adminPage.happening.categoryId.name){
    choosenCategory=findCategory(model.inputs.adminPage.happening.categoryId.name);
 }
-
 
 let happeningMainCategory=``;
 happeningMainCategory+=`
@@ -141,7 +131,6 @@ onchange="model.inputs.adminPage.happening.categoryId.name=this.value; updateVie
 
 <option selected disabled hidden>${model.inputs.adminPage.happening.categoryId.name ? choosenCategory.title : 'Velg kategori'}</option>
 `;
-
 for(let i=0; i<categories.length; i++){
   const category=categories[i];
     happeningMainCategory+=`
@@ -158,11 +147,9 @@ for(let i=0; i<categories.length; i++){
 return happeningMainCategory;
 }
 
-//Submit butonu tiklanmis ise ve radio buttonlar dan tiklanan yani isSelected true olan var ise o zaman sucess style ve icon mesaji ver....
+
 
 function createPaymentCategoryHtml(){
-
- 
 let { paymentTypes}=model.data;
 let paymentCategory=``;
 paymentCategory+=`
@@ -186,7 +173,6 @@ for(let i=0; i<paymentTypes.length; i++){
 let paymentType=paymentTypes[i];
 paymentCategory+=`
 <div class="paymentType">
-
 <input
 ${getChecked(paymentType.isChecked)}
 type="radio" name="radio" class="payTypeInput"  id="${paymentType.id}" name="${paymentType.title}" 

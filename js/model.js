@@ -3,7 +3,7 @@
 const model={
 
     app:{
-        page:"user",
+        page:"admin",
         currentUser:{
             firstName:"Olav",
             lastName:"Johansen",
@@ -23,11 +23,11 @@ const model={
                 happeningStartTime:{name:"",isFieldRequired:true,isValidate:false},
                 happeningEndDate:{name:"",isFieldRequired:true,isValidate:false},
                 happeningEndTime:{name:"",isFieldRequired:true,isValidate:false},
-            announcementStartDate:{name:"",isFieldRequired:false},
-            announcementStartTime:{name:"",isFieldRequired:false},
-            announcementEndDate:{name:"",isFieldRequired:false},
-            announcementEndTime:{name:"",isFieldRequired:false},
-            webSiteUrl:{name:"",isFieldRequired:false},
+                announcementStartDate:{name:"",isFieldRequired:false},
+                announcementStartTime:{name:"",isFieldRequired:false},
+                announcementEndDate:{name:"",isFieldRequired:false},
+                announcementEndTime:{name:"",isFieldRequired:false},
+                webSiteUrl:{name:"",isFieldRequired:false},
              
             },
              isSubmitted:false,
@@ -35,32 +35,27 @@ const model={
         
         },
         userPage:{
-            //input date-picker sadece 2022-03-29T10:01 bu formatta calisiyor buna bir cozum dusunelim....
-            chosenDateFrom:"",//filtering
-            chosenDateTo:"",//filtering
-            chosenMonth:"",//buna gore secilen 
-            isCategoryBtnClicked:false,//megamenu mantiginda category olusturmak icin bunu aliriz birkere
+           
+            chosenDateFrom:"",
+            chosenDateTo:"",
+            chosenMonth:"",
+            isCategoryBtnClicked:false,
             isSelectedAll:false,
             isReadMoreExtraPaidBtnClicked:true,
             isReadMoreNoneExtraPaidBtnClicked:false,
 
             clickedHappeningId:"",
-            filteredData:[],//Bunun cok bir espirisi yok kaldirmamiz gerekiyor
+            filteredData:[],
 
             filterBtnState:"this-month",
-          /*categories datasi burda olacakti...bunu dusunelim...cunku degisken ve on tarafta kullanici ile etkilesim ile bir dinamizm sagliyor ve onu kullaniyoruz...dolayisi ile burda olacakti... */
             categories:[{id:1,title:"Familie og moro", isSelected:false,icon:"icon-family-svgrepo-com"},{id:2,title:"Barn og familie", isSelected:false,icon:"icon-two-childs-playing-silhouettes-svgrepo-com"},{id:3,title:"Festival", isSelected:false,icon:"icon-party-svgrepo-com"},{id:4,title:"Sport", isSelected:false,icon:"icon-sports_baseball"},{id:5,title:"Konsert", isSelected:false,icon:"icon-music"},{id:6,title:"Utstilling", isSelected:false,icon:"icon-presentation-exhibition-svgrepo-com"},{id:7,title:"Teater", isSelected:false, icon:"icon-theater-svgrepo-com"}],
-            isMobilToggleMenu:false,
-
-            
+            isMobilToggleMenu:false,    
         }
     
     },
 
 
     data:{
-      
-        //Vi skal holde alle kategorier
         paymentTypes:[{id:1,title:"gratis",isChecked:false},{id:2,title:"betalt",isChecked:false},{id:3,title:"ekstra-betalt",isChecked:false}],
         happenings:[{
             id:1,
@@ -231,16 +226,3 @@ const model={
 
 }
 
-/*
-Har sett på modellen deres nå; det ser bra ut! Har noen kommentarer likevel: 
- - Jeg anbefaler å lagre datoer som iso-format tekst i modellen, altså eks '2022.03.10'. Da er det lett å lage new Date(dateStr). Se gjerne denne leksjonen om hvorfor: https://getacademy.moodlecloud.com/mod/page/view.php?id=465
-- jeg ville kanskje gjort start og stopp slik:
-  start: {
-    date: '2022-03-10',
-    time: '08
-    }
-og tilsvarende for end. Da kan time ev. være null hvis det er hele dagen
--  isFilterTodayOn osv kan kanskje byttes ut med filterDate som inneholder iso-dato det skal filtreres på?
-- inputs.userPage.dates - jeg skjønte ikke hva dere skal bruke denne til? Er dte en mellomlagring? I så fall er det bedre å bare generere alt fra scratch i view-funksjonene - men lag en funksjon for å gjøre det
- - ellers ser det veldig bra ut!
-*/
