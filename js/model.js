@@ -160,7 +160,7 @@ const model={
             imageUrl:"https://www.transosterdalen.no/wp-content/uploads/2022/02/stisyklister.jpg",
             categoryId:4,
             paymentTypeId:1,
-            happeningStartDate:"2022-04-12",
+            happeningStartDate:"2022-04-09",
             happeningStartTime:"13:00",
             happeningEndDate:"2022-04-15",
             happeningEndTime:"16:30",

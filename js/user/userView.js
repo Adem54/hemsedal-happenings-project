@@ -28,7 +28,7 @@ function createMobilMenu(){
 function createHeaderTopHtml() {
   let headerTop = ``;
   headerTop += `
-    <header class="fullscreen-header">
+<header class="fullscreen-header">
     <nav class="nav nav-top">
       <figure class="nav__list ">
         <a href="" class="nav__list-item"> Hemsedal-logo</a>
@@ -44,17 +44,14 @@ function createHeaderTopHtml() {
             <span class="icon-plus"> </span>
             <span>Oprett ny happening</span></a>
         </li>
-        <li><a class="nav__list-item" href="">Logg in</a></li>
+        <li>
+          <a class="nav__list-item" href="">Logg in</a>
+        </li>
       </ul>
       ${createMobilMenu()}
-    </nav>
-    
+    </nav>    
     <h1 class="header__title">HVA SKJER I HEMSEDAL!</h1>
- 
-
-   
-  </header>
-    
+</header> 
     `;
   return headerTop;
 }
@@ -73,18 +70,14 @@ function createEkstraPaidSlider() {
     let result=getHappeningsFromStorage().sort((a,b)=>{
       return new Date(a.happeningStartDate)-new Date(b.happeningStartDate)
     });
-
   let item = ``;
   let extraPaidHappenings = getHappeningByPaymentType(result, 3);
-
-
   for (let i = 0; i < extraPaidHappenings.length; i++) {
     let extraPaidHappening = extraPaidHappenings[i];
     let category = getCategoryById(
       model.inputs.userPage.categories,
       extraPaidHappening.categoryId
     );
-
     let categoryTitleInEnglish = translateCategoryTitleToEnglish(
       category.title
     );
@@ -94,7 +87,6 @@ function createEkstraPaidSlider() {
     let endTime = extraPaidHappening.happeningEndTime;
     let startDateAllFormats = getMyAllDateFormats(startDate);
     let endDateAllFormats = getMyAllDateFormats(endDate);
-
     item += `
 
 <div 
