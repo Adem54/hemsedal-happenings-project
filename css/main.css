@@ -678,6 +678,24 @@ textarea, input[type="datetime-local"] {
   }
 }
 
+@media only screen and (max-width: 540px) {
+  .category_list {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .category_list {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .category_list {
+    width: 65%;
+  }
+}
+
 /*Category icons style*/
 .icon-party-svgrepo-com:before {
   content: "\e901";

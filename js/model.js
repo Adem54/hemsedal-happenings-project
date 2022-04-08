@@ -39,7 +39,7 @@ const model={
             chosenDateFrom:"",
             chosenDateTo:"",
             chosenMonth:"",
-            isCategoryBtnClicked:false,
+            isCategoryBtnClicked:true,
             isSelectedAll:false,
             isReadMoreExtraPaidBtnClicked:true,
             isReadMoreNoneExtraPaidBtnClicked:false,
