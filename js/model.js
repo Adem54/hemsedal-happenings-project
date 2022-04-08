@@ -3,7 +3,7 @@
 const model={
 
     app:{
-        page:"admin",
+        page:"user",
         currentUser:{
             firstName:"Olav",
             lastName:"Johansen",
