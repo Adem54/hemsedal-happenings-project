@@ -601,6 +601,15 @@ text-overflow:hidden;
       }
 
 
+      
+      .nav-mobil-icon {
+        // visibility: hidden;
+        display: none;
+        color: #fff;
+      }
+      
+    
+
       @media screen and (max-width: 600px) {
 
         .nav-mobil-icon {
@@ -635,7 +644,6 @@ text-overflow:hidden;
         }
         .header__title {
           font-size: 1.5rem;
-          font-family: "Lemonada", cursive;
         }
 
         .filter-btn {
@@ -651,6 +659,38 @@ text-overflow:hidden;
        }
       
       }
+
+     
+
+/*
+
+ .nav__list {
+        margin-block-end: 0;
+        margin-block-start: 0;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include flexCenter;
+      }
+      .nav-mobil-icon {
+        // visibility: hidden;
+        display: none;
+        color: #fff;
+      }
+      
+      .header__title {
+        color: #fff;
+        font-size: 2.5rem;
+        font-family: "Lemonada", cursive;
+        animation: textFromLeft 1s;
+      }
+
+
+
+
+
+*/
+
    
       @media only screen and (max-width:540px) {
         .input {
@@ -682,7 +722,7 @@ text-overflow:hidden;
                    margin-left: -1rem;
                  } 
       }
-
+   
       @media only screen and (max-width:400px) {
         .filterBar-container {
           padding:0 2%;
@@ -709,7 +749,6 @@ text-overflow:hidden;
 
  .filterBtns-container {
      width: 100%;
-    
      display: flex;
      flex-direction: column;
      padding:1.8% 10%;
@@ -731,7 +770,6 @@ text-overflow:hidden;
  
  .header__title {
   font-size: 1.5rem;
-  font-family: "Lemonada", cursive;
 }
 
 .filter-btn {
@@ -746,33 +784,11 @@ background-color:$filter-btn-color;
 color: #fff;
 border: 2px solid #000 ;
 }
-
-
       }
+
+
 
      
-      .nav__list {
-        margin-block-end: 0;
-        margin-block-start: 0;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        @include flexCenter;
-      }
-      .nav-mobil-icon {
-        // visibility: hidden;
-        display: none;
-        color: #fff;
-      }
-      
-      .header__title {
-        color: #fff;
-        font-size: 2.5rem;
-        font-family: "Lemonada", cursive;
-        animation: textFromLeft 1s;
-      }
-
-
    
       
    
