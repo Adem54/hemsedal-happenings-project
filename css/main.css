@@ -1492,6 +1492,17 @@ text-overflow:hidden;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: red;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .filterBar-container {
+    padding: 0 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: teal;
   }
 }
 
