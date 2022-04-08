@@ -452,6 +452,7 @@ text-overflow:hidden;
      border-top-left-radius:.5rem ;
      border-top-right-radius: .5rem;
     //  background-color:#A03033;
+
      
      position: relative;
  }
@@ -597,89 +598,9 @@ text-overflow:hidden;
         color: #fff;
         border: 2px solid #000 ;
        }
-
-       
-      
-      }
-   
-      @media only screen and (max-width:540px) {
-        .input {
-          width: 72%;
-          }
-
-          .filterBar-container__item-category { 
-            background-color: #fff;
-            padding:.2rem .3rem;
-            color: black;
-            border-radius: 0.2rem;
-            cursor: pointer;
-            margin-right: .2rem;
-         @include flexCenter(row,space-between);
-            }
- 
-            .active {
-              background-color:$filter-btn-color;
-              color: #fff;
-              border: 2px solid #000 ;
-             }
-
-         
-             
-             .cart-container {
-               width: 20rem;
-               margin:.5rem;
-               height:30rem;
-                }
-
-               //viktig..
-                 .category_label {
-                   margin-left: -1rem;
-                 }
-            
-      }
-
-      @media only screen and (max-width:400px) {
-        .filterBar-container {
-          padding:0 2%;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-        //  @include flexCenter;
-         }
-
-         .input {
-          width: 79%;
-          }
-        
-
-      }
-
-     
-      .nav__list {
-        margin-block-end: 0;
-        margin-block-start: 0;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        @include flexCenter;
-      }
-      .nav-mobil-icon {
-        // visibility: hidden;
-        display: none;
-        color: #fff;
-      }
-      
-      .header__title {
-        color: #fff;
-        font-size: 2.5rem;
-        font-family: "Lemonada", cursive;
-        animation: textFromLeft 1s;
       }
 
 
-      @media screen and (max-width:400px){
-        
-      }
       @media screen and (max-width: 600px) {
 
         .nav-mobil-icon {
@@ -730,6 +651,132 @@ text-overflow:hidden;
        }
       
       }
+   
+      @media only screen and (max-width:540px) {
+        .input {
+          width: 72%;
+          }
+
+          .filterBar-container__item-category { 
+            background-color: #fff;
+            padding:.2rem .3rem;
+            color: black;
+            border-radius: 0.2rem;
+            cursor: pointer;
+            margin-right: .2rem;
+            @include flexCenter(row,space-between);
+            }
+ 
+            .active {
+              background-color:$filter-btn-color;
+              color: #fff;
+              border: 2px solid #000 ;
+             }
+             .cart-container {
+               width: 20rem;
+               margin:.5rem;
+               height:30rem;
+                }
+               //viktig..
+                 .category_label {
+                   margin-left: -1rem;
+                 } 
+      }
+
+      @media only screen and (max-width:400px) {
+        .filterBar-container {
+          padding:0 2%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        //  @include flexCenter;
+         }
+         .input {
+          width: 79%;
+          }
+
+          /*Filter btns*/
+.filterBtns-wrapper {
+  padding:0 18%;
+  display: flex;
+  @include flexCenter(column);
+  
+ }
+ 
+.happenings-title {
+  margin:2rem;
+}
+
+ .filterBtns-container {
+     width: 100%;
+    
+     display: flex;
+     flex-direction: column;
+     padding:1.8% 10%;
+     border-top-left-radius:.5rem ;
+     border-top-right-radius: .5rem;
+    //  background-color:#A03033;
+     position: relative;
+    
+ }
+ 
+
+ .filter-btn:hover {
+     background-color:$filter-btn-color;
+     color: #fff;
+     border: 2px solid #000 ;
+ }
+
+
+ 
+ .header__title {
+  font-size: 1.5rem;
+  font-family: "Lemonada", cursive;
+}
+
+.filter-btn {
+  padding:.4rem .4rem;
+  color: #000;
+  font-size: 1rem;
+  white-space: nowrap;
+  margin-top: .2rem;
+}
+.active {
+background-color:$filter-btn-color;
+color: #fff;
+border: 2px solid #000 ;
+}
+
+
+      }
+
+     
+      .nav__list {
+        margin-block-end: 0;
+        margin-block-start: 0;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include flexCenter;
+      }
+      .nav-mobil-icon {
+        // visibility: hidden;
+        display: none;
+        color: #fff;
+      }
+      
+      .header__title {
+        color: #fff;
+        font-size: 2.5rem;
+        font-family: "Lemonada", cursive;
+        animation: textFromLeft 1s;
+      }
+
+
+   
+      
+   
+
       .date-field {
         padding:.2rem 1.2rem;
         border-radius: 0.2rem;
