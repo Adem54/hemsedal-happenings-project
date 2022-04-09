@@ -414,6 +414,16 @@ layout contains styles for different aspects of the site's structural layout (th
 }
 
 @media screen and (max-width: 480px) {
+  .header {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .btnUserPage {
+    margin-bottom: .2rem;
+  }
   .happeningDate {
     display: flex;
     justify-content: flex-start;

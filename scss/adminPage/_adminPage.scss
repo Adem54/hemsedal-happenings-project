@@ -58,6 +58,17 @@ layout contains styles for different aspects of the site's structural layout (th
           }
       }
       @media screen and (max-width: 480px){
+        
+        .header {
+          width: 90%;
+          @include flexCenter(column,center);
+        }
+
+        .btnUserPage {
+          margin-bottom: .2rem;
+        }
+
+        
         .happeningDate {
           @include flexCenter(column,flex-start);
   
@@ -65,6 +76,7 @@ layout contains styles for different aspects of the site's structural layout (th
         .happeningDateSection {
           width: 80%;  
           }
+
       }
      
       .date-margin{
