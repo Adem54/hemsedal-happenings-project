@@ -41,10 +41,10 @@ const model={
             chosenMonth:"",
             isCategoryBtnClicked:false,
             isSelectedAll:false,
-            isReadMoreExtraPaidBtnClicked:true,
-            isReadMoreNoneExtraPaidBtnClicked:true,
+            isReadMoreExtraPaidBtnClicked:false,
+            isReadMoreNoneExtraPaidBtnClicked:false,
 
-            clickedHappeningId:"2",
+            clickedHappeningId:"",
             filteredData:[],
 
             filterBtnState:"this-month",

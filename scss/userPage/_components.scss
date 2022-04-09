@@ -330,7 +330,7 @@ font-size: 1.4rem;
 }
 .modal-image {
   width: 100%;
-  height: 40%;
+  height: 50%;
   background-color: orange;
   background-image: url("https://source.unsplash.com/random/?event,arrangement,natur,child,social");
   box-sizing: border-box;
@@ -347,7 +347,6 @@ font-size: 1.4rem;
   position: absolute;
   width: 7rem;
   height: 7rem;
-  
   bottom: 0;
   @include flexCenter(column);
   color: #fff;
@@ -361,7 +360,7 @@ font-size: 1.4rem;
 
 .modal-description {
   width: 90%;
-  height: 60%;
+  height: 50%;
   // @include flexCenter(column);
   display: flex;
   flex-direction: column;
@@ -418,7 +417,6 @@ font-size: 1.4rem;
   display: flex;
   flex-direction: column;
   // font-weight: bold;
-
   color: #333;
 }
 .modal-description__text {
@@ -442,7 +440,6 @@ font-size: 1.4rem;
 @media only screen and (max-width:960px) {
   .modal-wrapper {
     width: 60%;  
- background-color: green;
 
    
   }
@@ -459,7 +456,6 @@ font-size: 1.4rem;
 @media only screen and (max-width:740px) {
   .modal-wrapper {
     width: 70%;  
- background-color: cyan;
    
   }
 
@@ -480,7 +476,6 @@ font-size: 1.4rem;
 @media only screen and (max-width:600px) {
   .modal-wrapper {
     width: 70%;  
- background-color: yellow;
    
   }
 
@@ -500,7 +495,6 @@ font-size: 1.4rem;
 @media only screen and (max-width:500px) {
   .modal-wrapper {
     width: 75%;  
- background-color: orange;
    
   }
 
@@ -529,7 +523,6 @@ font-size: 1.4rem;
 @media only screen and (max-width:400px){
   .modal-wrapper {
     width: 90%;  
-   background-color:lightblue;
    
   }
 
