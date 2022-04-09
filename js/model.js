@@ -42,9 +42,9 @@ const model={
             isCategoryBtnClicked:false,
             isSelectedAll:false,
             isReadMoreExtraPaidBtnClicked:true,
-            isReadMoreNoneExtraPaidBtnClicked:false,
+            isReadMoreNoneExtraPaidBtnClicked:true,
 
-            clickedHappeningId:"",
+            clickedHappeningId:"2",
             filteredData:[],
 
             filterBtnState:"this-month",

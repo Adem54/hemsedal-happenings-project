@@ -551,7 +551,6 @@ function readMoreBtn(id){
               `https://source.unsplash.com/random/?${categoryTitleInEnglish}`
             }
           )
-  
           "
           >
             <section class="modal-date"> 
