@@ -31,7 +31,7 @@ function createHeaderTopHtml() {
 <header class="fullscreen-header">
     <nav class="nav nav-top">
       <figure class="nav__list ">
-        <a href="" class="nav__list-item"> Hemsedal-logo</a>
+        <a href="" class="nav__list-item  logo"> Hemsedal-logo</a>
       </figure>
       <ul class="nav__list nav-menu
       ${model.inputs.userPage.isMobilToggleMenu ? 'responsive' : ''}

@@ -214,17 +214,38 @@
   }
 
   @media only screen and (max-width:540px) {
+    .nav__list-item {
+      height: 3rem;/*Navbar in bu boyutu en buyuk ekran icin olacak*/
+    }
     .category_list  {
      width: 45%;
  }
   }
 
   @media only screen and (max-width:400px) {
+
+    .nav__list-item {
+      height: 4rem;/*Navbar in bu boyutu en buyuk ekran icin olacak*/
+      padding: .6rem 0;
+      margin-left: .5rem;
+    }
     .category_list  {
      width: 55%;
  }
+
   }
   @media only screen and (max-width:300px) {
+   
+    .nav__list-item {
+      height: 4rem;/*Navbar in bu boyutu en buyuk ekran icin olacak*/
+      padding: .6rem 0;
+      margin-left: .2rem;
+    }
+.logo {
+  margin-left: -1rem;
+  
+}
+   
     .category_list  {
      width: 65%;
  }

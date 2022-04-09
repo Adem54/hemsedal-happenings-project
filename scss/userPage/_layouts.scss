@@ -629,13 +629,12 @@ text-overflow:hidden;
         }
         .responsive {
           display: flex;
-          
         }
+        .nav__list-item {
+          height: 3rem;/*Navbar in bu boyutu en buyuk ekran icin olacak*/
+        }
+        
       
-        .nav__list {
-          margin-left: -2rem;
-
-        }
         .fullscreen-header {
           height: 55vh;
           background-position-x: 60%;
@@ -774,7 +773,11 @@ border: 2px solid #000 ;
       }
 
 
-
+      @media only screen and (max-width:300px) {
+.responsive {
+  flex-direction: column;
+}
+      }
      
    
       

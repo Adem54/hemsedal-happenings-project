@@ -707,18 +707,37 @@ textarea, input[type="datetime-local"] {
 }
 
 @media only screen and (max-width: 540px) {
+  .nav__list-item {
+    height: 3rem;
+    /*Navbar in bu boyutu en buyuk ekran icin olacak*/
+  }
   .category_list {
     width: 45%;
   }
 }
 
 @media only screen and (max-width: 400px) {
+  .nav__list-item {
+    height: 4rem;
+    /*Navbar in bu boyutu en buyuk ekran icin olacak*/
+    padding: .6rem 0;
+    margin-left: .5rem;
+  }
   .category_list {
     width: 55%;
   }
 }
 
 @media only screen and (max-width: 300px) {
+  .nav__list-item {
+    height: 4rem;
+    /*Navbar in bu boyutu en buyuk ekran icin olacak*/
+    padding: .6rem 0;
+    margin-left: .2rem;
+  }
+  .logo {
+    margin-left: -1rem;
+  }
   .category_list {
     width: 65%;
   }
@@ -1525,8 +1544,9 @@ text-overflow:hidden;
   .responsive {
     display: flex;
   }
-  .nav__list {
-    margin-left: -2rem;
+  .nav__list-item {
+    height: 3rem;
+    /*Navbar in bu boyutu en buyuk ekran icin olacak*/
   }
   .fullscreen-header {
     height: 55vh;
@@ -1643,6 +1663,12 @@ text-overflow:hidden;
     font-size: 1.2rem;
     padding: .6rem 1.5rem;
     white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .responsive {
+    flex-direction: column;
   }
 }
 
