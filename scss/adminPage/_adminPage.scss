@@ -46,15 +46,26 @@ layout contains styles for different aspects of the site's structural layout (th
 
     .happeningDateSection {
       width: 30%;  
-      
       }
       .happeningDateInput {
         display: block;
         box-sizing: border-box;
         margin-top:-.08rem; 
-      
       }
-
+      @media screen and (max-width: 540px){
+        .happeningDateSection {
+          width: 40%;  
+          }
+      }
+      @media screen and (max-width: 480px){
+        .happeningDate {
+          @include flexCenter(column,flex-start);
+  
+        }
+        .happeningDateSection {
+          width: 80%;  
+          }
+      }
      
       .date-margin{
         margin: 0.4rem 1rem;
