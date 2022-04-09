@@ -76,7 +76,7 @@ const model={
         },{
             id:2,
             title:"Spennende innendørsaktivitet for barn",
-            description:" Klar, ferdig lek! På eventyrfabrikken kan alle barn springe, hoppe, rope, rote og kose seg så mye de vil. Eventyrfabrikken er Skandinavias største lekefabrikk!",
+            description:" Klar, ferdig lek! På eventyrfabrikken kan alle barn springe, hoppe, rope, rote og kose seg så mye de vil. Eventyrfabrikken er Skandinavias største lekefabrikk! Klar, ferdig lek! På eventyrfabrikken kan alle barn springe, hoppe, rope, rote og kose seg så mye de vil. Eventyrfabrikken er Skandinavias største lekefabrikk! Klar, ferdig lek! På eventyrfabrikken kan alle barn springe, hoppe, rope, rote og kose seg så mye de vil. Eventyrfabrikken er Skandinavias største lekefabrikk!Klar, ferdig lek! På eventyrfabrikken kan alle barn springe, hoppe, rope, rote og kose seg så mye de vil. Eventyrfabrikken er Skandinavias største lekefabrikk! ",
             imageUrl:"https://tellusdmsmedia.newmindmedia.com/wsimgs/237234823_4576573625727427_7642383865876437128_n_255055228.jpg",
             categoryId:2,
             paymentTypeId:2,
@@ -216,7 +216,7 @@ const model={
             announcementStartTime:"",
             announcementEndDate:"2022-04-18",
             announcementEndTime:"",
-            webSiteUrl:"https://blogg.millsproffpartner.no/slik-lager-du-p%C3%B8lsefesten-ingen-glemmer",
+            webSiteUrl:"https://www.borealisfestival.no/en/home/",
         },
     
     ],

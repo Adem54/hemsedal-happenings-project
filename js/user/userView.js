@@ -513,6 +513,7 @@ function readMoreBtn(id){
       parseInt(happeningId)
     );
   
+    console.log("happening: ",happening)
     let category = getCategoryById(
       model.inputs.userPage.categories,
       happening.categoryId
@@ -583,6 +584,11 @@ function readMoreBtn(id){
             </div>
             <div class="modal-description__text">${happening.description} 
             </div>
+            <div class="read-more">
+            <a class="website-adress" href="${happening.webSiteUrl}" target="_blank">Gå til netside
+            </a>
+            </div>
+            
         </div>
       </div>
     </section>
