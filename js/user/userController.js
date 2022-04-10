@@ -79,7 +79,7 @@ function selectAllOrNone(selectAll) {
     let category = model.inputs.userPage.categories[i];
     category.isSelected = selectAll; 
   }
-  // updateView();
+  updateView();
 }
 
 function findCategory(id) {
@@ -114,8 +114,6 @@ function doAllCategoriesFalse(){
     {...category,isSelected:false} : category
     )
 }
-
-
 
 
 function compareYearMonthDay(date1, date2) {				
