@@ -299,7 +299,9 @@ class="search-btn ${model.inputs.userPage.filterBtnState=='search-btn' ? 'active
 function createMultipleChoiceCategory() {
   let multipleCoiceCategory = ``;
   multipleCoiceCategory += `
-    <section class="category-container__item   category_list    ">
+    <section
+    onclick="stopPropagation(event)"
+    class="category-container__item   category_list    ">
   <div class="category_list__item  " >
     <input ${getChecked(model.inputs.userPage.isSelectedAll)} 
     type="checkbox"
