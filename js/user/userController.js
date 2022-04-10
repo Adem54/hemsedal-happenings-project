@@ -79,7 +79,7 @@ function selectAllOrNone(selectAll) {
     let category = model.inputs.userPage.categories[i];
     category.isSelected = selectAll; 
   }
-  updateView();
+  // updateView();
 }
 
 function findCategory(id) {
@@ -91,8 +91,7 @@ function findCategory(id) {
 function toggleCategorySelected(id) {
   let category = findCategory(id);
   category.isSelected = !category.isSelected;
-
-  updateView();
+  // updateView();
 }
 
 function findElementById(array, id) {
@@ -108,6 +107,16 @@ function getselectedCategoryCountNumber(categories) {
   let selectedCategories = categories.filter((category) => category.isSelected);
   return selectedCategories.length;
 }
+
+
+function doAllCategoriesFalse(){
+  model.inputs.userPage.categories=model.inputs.userPage.categories.map(category=>category.isSelected ? 
+    {...category,isSelected:false} : category
+    )
+}
+
+
+
 
 function compareYearMonthDay(date1, date2) {				
   let date1Year = date1.slice(0, 4);				
@@ -174,8 +183,6 @@ function getHappeningAsideFromExtraPaid(happenings) {
 
 function getCurrentAndOneMonthLaterDates() {
   let myNowDate = new Date();
-
-
   let currentDateInputFormat = myNowDate.toISOString().slice(0, 16);
   let currentDate = myNowDate.toISOString().slice(0, 10);
   let myFutureDate = myNowDate.setMonth(myNowDate.getMonth() + 1);
@@ -278,29 +285,30 @@ function searchHappenings(happenings, categories, startDate, endDate) {
     return getDateBetweenTwoDates(happenings, currentDate, futureDate);
   }
 
-  if (startDate !== "" && endDate !== "" && isAnyCategoryChecked(categories)) {
-    return filterByStartEndDatoAndCategory(
-      happenings,
-      categories,
-      startDate,
-      endDate
-    );
-  } else if (startDate !== "" && endDate !== "") {
-    return getDateBetweenTwoDates(happenings, startDate, endDate);
-  } else if (startDate !== "" && isAnyCategoryChecked(categories)) {
-    return filterByStartDateAndCategory(happenings, categories, startDate);
-  } else if (endDate !== "" && isAnyCategoryChecked(categories)) {
-    return filterByEndDateAndCategory(happenings, categories, endDate);
-  } else if (startDate !== "") {
-    return getDateFromStartDate(happenings, startDate);
-  } else if (endDate !== "") {
-    return getDateToEndDate(happenings, endDate);
-  } else if (isAnyCategoryChecked(categories)) {
-    return getHappeningsByCheckedCategory(happenings, categories);
-  } else {
-    let { currentDate, oneMonthLaterDate } = getCurrentAndOneMonthLaterDates();
-    return getDateBetweenTwoDates(happenings, currentDate, oneMonthLaterDate);
-  }
+ 
+    if (startDate !== "" && endDate !== "" && isAnyCategoryChecked(categories)) {
+      return filterByStartEndDatoAndCategory(
+        happenings,
+        categories,
+        startDate,
+        endDate
+      );
+    } else if (startDate !== "" && endDate !== "") {
+      return getDateBetweenTwoDates(happenings, startDate, endDate);
+    } else if (startDate !== "" && isAnyCategoryChecked(categories)) {
+      return filterByStartDateAndCategory(happenings, categories, startDate);
+    } else if (endDate !== "" && isAnyCategoryChecked(categories)) {
+      return filterByEndDateAndCategory(happenings, categories, endDate);
+    } else if (startDate !== "") {
+      return getDateFromStartDate(happenings, startDate);
+    } else if (endDate !== "") {
+      return getDateToEndDate(happenings, endDate);
+    } else if (isAnyCategoryChecked(categories)) {
+      return getHappeningsByCheckedCategory(happenings, categories);
+    } else {
+      let { currentDate, oneMonthLaterDate } = getCurrentAndOneMonthLaterDates();
+      return getDateBetweenTwoDates(happenings, currentDate, oneMonthLaterDate);
+    }
 }
 
 //hvis ingen kategori som er valgt,kommer alle kategorier som selectedAll..
@@ -332,6 +340,7 @@ function toggleCategory(event){
   model.inputs.userPage.isCategoryBtnClicked=!model.inputs.userPage.isCategoryBtnClicked; 
   event.preventDefault();
   event.stopPropagation();
+  model.inputs.userPage.filterBtnState="";
    updateView() 
 }
 
@@ -346,6 +355,7 @@ function getEndDate(event){
 }
 
 function closetoggleCategoryBox(event){
+  model.inputs.userPage.filterBtnState="";
   if(!model.inputs.userPage.isCategoryBtnClicked){
          return;
   }

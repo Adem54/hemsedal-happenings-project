@@ -43,13 +43,14 @@ const model={
             isSelectedAll:false,
             isReadMoreExtraPaidBtnClicked:false,
             isReadMoreNoneExtraPaidBtnClicked:false,
-
             clickedHappeningId:"",
             filteredData:[],
-
             filterBtnState:"this-month",
             categories:[{id:1,title:"Familie og moro", isSelected:false,icon:"icon-family-svgrepo-com"},{id:2,title:"Barn og familie", isSelected:false,icon:"icon-two-childs-playing-silhouettes-svgrepo-com"},{id:3,title:"Festival", isSelected:false,icon:"icon-party-svgrepo-com"},{id:4,title:"Sport", isSelected:false,icon:"icon-sports_baseball"},{id:5,title:"Konsert", isSelected:false,icon:"icon-music"},{id:6,title:"Utstilling", isSelected:false,icon:"icon-presentation-exhibition-svgrepo-com"},{id:7,title:"Teater", isSelected:false, icon:"icon-theater-svgrepo-com"}],
-            isMobilToggleMenu:false,    
+            isMobilToggleMenu:false,   
+            isOnLoad:true, 
+            isOutsideOfCategoryClicked:false,
+            filteredHappenings:[],
         }
     
     },
@@ -80,7 +81,7 @@ const model={
             imageUrl:"https://tellusdmsmedia.newmindmedia.com/wsimgs/237234823_4576573625727427_7642383865876437128_n_255055228.jpg",
             categoryId:2,
             paymentTypeId:2,
-            happeningStartDate:"2022-04-03",
+            happeningStartDate:"2022-04-11",
             happeningStartTime:"15:00",
             happeningEndDate:"2022-04-17",
             happeningEndTime:"15:55",
@@ -160,7 +161,7 @@ const model={
             imageUrl:"https://www.transosterdalen.no/wp-content/uploads/2022/02/stisyklister.jpg",
             categoryId:4,
             paymentTypeId:1,
-            happeningStartDate:"2022-04-09",
+            happeningStartDate:"2022-04-29",
             happeningStartTime:"13:00",
             happeningEndDate:"2022-04-15",
             happeningEndTime:"16:30",

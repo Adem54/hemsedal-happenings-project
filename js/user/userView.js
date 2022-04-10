@@ -1,5 +1,6 @@
+let count=0;
 function updateUserView() {
-  
+
   document.getElementById("app").innerHTML = `  
 <div  onclick="closetoggleCategoryBox(event)" >
     ${createHeaderTopHtml()}
@@ -14,7 +15,6 @@ function updateUserView() {
     ${createHappeningList()}
 </div>
   `;
- 
 }
 
 function createMobilMenu(){
@@ -155,21 +155,20 @@ class="cart-container">
 </a>
 </div>
 </div>
-
     `;
   }
 
   ekstraPaidSlider +=
     item +
     `
-
     </section> </section>
   
        `;
+       return ekstraPaidSlider;
+     }
+
  
 
-  return ekstraPaidSlider;
-}
 
 function createSearchHappeningBar() {
   getStartEndDateCurrentValue();
@@ -284,9 +283,10 @@ onclick="
     model.inputs.userPage.chosenDateFrom,
     model.inputs.userPage.chosenDateTo
  ); 
- model.inputs.userPage.filterBtnState='';
+ stopPropagation(event);
+ model.inputs.userPage.filterBtnState='search-btn';
  updateView()"
-class="search-btn   ">Søk Happening &nbsp &nbsp<i class="fa-solid fa-play"></i></button></div>
+class="search-btn ${model.inputs.userPage.filterBtnState=='search-btn' ? 'active' : ''}  ">Søk Happening &nbsp &nbsp<i class="fa-solid fa-play"></i></button></div>
 </div>
 
 </section>
@@ -340,13 +340,19 @@ function createFilterButtons() {
 
 class="filter-btn ${model.inputs.userPage.filterBtnState=='tomorrow' ? 'active' : ''} "
  onclick="model.inputs.userPage.filterBtnState='tomorrow';
+ doAllCategoriesFalse();
+ stopPropagation(event);
  updateView()">I morgen</button></div>
 <div><button
 onclick="model.inputs.userPage.filterBtnState='this-week';
+doAllCategoriesFalse();
+stopPropagation(event);
  updateView()"
 class="filter-btn  ${model.inputs.userPage.filterBtnState=='this-week' ? 'active' : ''}">Denne uka</button></div>
 <div><button
 onclick="model.inputs.userPage.filterBtnState='this-month';
+doAllCategoriesFalse();
+stopPropagation(event);
  updateView()"
 class="filter-btn ${model.inputs.userPage.filterBtnState=='this-month' ? 'active' : ''} ">Denne måneden</button></div>
 </div>
@@ -359,6 +365,7 @@ class="filter-btn ${model.inputs.userPage.filterBtnState=='this-month' ? 'active
 
 function createHappeningList() {
 
+  
   let { categories } = model.inputs.userPage;
   let { chosenDateFrom, chosenDateTo } = model.inputs.userPage;
   let result=getHappeningsFromStorage().sort((a,b)=>{
@@ -367,14 +374,20 @@ function createHappeningList() {
   let happeningsWithoutExtraPaid = getHappeningAsideFromExtraPaid(
   result
   );
-  //searchHappenings working fra begynnelsen
-  let getFilteredData = searchHappenings(
+ 
+  let getFilteredData;
+  getFilteredData = searchHappenings(
     happeningsWithoutExtraPaid,
     categories,
     chosenDateFrom,
     chosenDateTo
   );
-  
+ 
+  if(model.inputs.userPage.filterBtnState){
+    model.inputs.userPage.filteredHappenings=getFilteredData;
+  }
+
+
   let happeningList = ``;
 
   happeningList += `
@@ -390,8 +403,8 @@ ${createReadMoreModal()}
 
 
 
-  for (let i = 0; i < getFilteredData.length; i++) {
-    let happening = getFilteredData[i];
+  for (let i = 0; i < model.inputs.userPage.filteredHappenings.length; i++) {
+    let happening = model.inputs.userPage.filteredHappenings[i];
     let category = getCategoryById(
       model.inputs.userPage.categories,
       happening.categoryId
@@ -513,7 +526,6 @@ function readMoreBtn(id){
       parseInt(happeningId)
     );
   
-    console.log("happening: ",happening)
     let category = getCategoryById(
       model.inputs.userPage.categories,
       happening.categoryId
