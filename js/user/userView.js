@@ -463,10 +463,6 @@ function createHappeningList() {
 }
 
  
-
-
-
-
 function readMoreBtn(id){
   return `
           <div class="read-more">
@@ -579,8 +575,6 @@ function readMoreBtn(id){
     return readMoreModal;
   }
   
-  
-  
   function cancelModal() {
     console.log("Cancel Modal");
     model.inputs.userPage.isReadMoreExtraPaidBtnClicked = false;
@@ -588,7 +582,6 @@ function readMoreBtn(id){
     updateView();
     
   }
-  
   
   
   function readMore(happeningId) {
