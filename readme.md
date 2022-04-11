@@ -28,7 +28,7 @@ Det er en web-applikasjon som viser hva slags muligheter eller aktiviteter det f
   <li>En annen utforming av extrabetalte-aktivitetene er laget og et ikon er plassert for å indikere at disse aktivitetene er kunngjøringer.</li>
   <li>Hver aktivitet er dynamisk oppført med sitt ikon i henhold til sin kategori.</li>
   <li>Hvis admin-brukeren ikke legger til et bilde, legges et bilde til tilfeldig i henhold til kategorien.</li>
-  <li>Filtre, datovelger, veksle-kategoriliste og filtreringsknapper er opprettet for gratise og betalte-aktiviteter, der brukeren kan se de siste 1 måned, 1 uke eller 1       dag aktivitetene i henhold til hvilken som helst spesifikk dato de ønsker.</li>
+  <li>Filtre, datovelger, veksle-kategoriliste og filtreringsknapper er opprettet for gratise og betalte-aktiviteter, det ble skaffet der brukeren kan se de aktivitetene de kommende 1 måned, 1 uke eller 1 dag  eller i henhold til hvilken som helst spesifikk dato  de ønsker.</li>
   <li>Alle aktiviteter kommer i form av neste 1-måneders periode når siden åpnes for første gang.</li>
   <li> når en av filtreringsknappene klikkes av brukeren, en annen bakgrunnsfarge og kantlinje er brukt for å vise at den klikkede knappen er aktiv.</li>
   <li>Mens kategorilisten åpnes når du klikker på ikonet, kan den lukkes enten ved å klikke på ikonet igjen eller ved å klikke hvor som helst på siden.</li>
