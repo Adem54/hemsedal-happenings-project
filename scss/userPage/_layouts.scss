@@ -503,6 +503,7 @@ text-overflow:hidden;
     .cart-container {
       width: 20rem;
       margin:.5rem;
+      margin-bottom: 1rem;
       height:30rem;
        }
      }
@@ -515,14 +516,17 @@ text-overflow:hidden;
           margin-top: 1rem;
           padding: 0 2%;
         }
-     .cart-container {
-          width: 24rem;
+        .cart-container {
+           width: 24rem;
           margin:.5rem;
+          margin-bottom: 1rem;
           height:30rem;
            }
           }
 
  @media only screen and (max-width:940px){
+
+ 
       .filterBar-container {
       width: 100%;
       padding:0 18%;
@@ -546,12 +550,31 @@ text-overflow:hidden;
           color: #fff;
           border: 2px solid #000 ;
          }
-
-        
   }   
+
+  @media only screen and (max-width:850px){
+    .happenings {
+      padding: 0 2%;
+    }
+    .cart-container {
+       width: 21rem;
+      margin:.4rem;
+      margin-bottom: 1rem;
+      height:30rem;
+       }
+  }
 
   
   @media only screen and (max-width:740px) {
+    .happenings {
+      padding: 0 0%;
+    }
+    .cart-container {
+       width: 18rem;
+      margin:.2rem;
+      margin-bottom: 1rem;
+      height:30rem;
+       }
     .fullscreen-header {
       height: 65vh;
       background-position-x: 60%;
@@ -611,6 +634,14 @@ text-overflow:hidden;
     
 
       @media screen and (max-width: 600px) {
+
+        
+        .cart-container {
+           width: 25rem;
+          margin:.2rem;
+          margin-bottom: 1rem;
+         
+           }
 
         .nav-mobil-icon {
           display: block;
@@ -690,7 +721,7 @@ text-overflow:hidden;
               border: 2px solid #000 ;
              }
              .cart-container {
-               width: 20rem;
+               width: 23rem;
                margin:.5rem;
                height:30rem;
                 }
@@ -763,6 +794,11 @@ color: #fff;
 border: 2px solid #000 ;
 }
 
+.cart-container {
+  width: 21rem;
+  margin:.5rem;
+  height:30rem;
+   }
 
 .main-title>h1{
   width: 70%;
@@ -780,9 +816,7 @@ border: 2px solid #000 ;
       }
      
    
-      
-   
-
+    
       .date-field {
         padding:.2rem 1.2rem;
         border-radius: 0.2rem;
