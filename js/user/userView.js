@@ -61,6 +61,8 @@ function createHeaderTopHtml() {
 
 
 function createEkstraPaidSlider() {
+  let now=new Date();
+  let date=now.getTime();
   let ekstraPaidSlider = ``;
   ekstraPaidSlider += `
     <div class="slider-title main-title">
@@ -70,11 +72,16 @@ function createEkstraPaidSlider() {
       <section class="slider-container extraPaid-container">
       ${createReadMoreModal()}
     `;
+    //Vi henter ut ekstrabetalte aktiviteter fra narmeste-dato
     let result=getHappeningsFromStorage().sort((a,b)=>{
       return new Date(a.happeningStartDate)-new Date(b.happeningStartDate)
     });
+    //Vi tar ut aktiviteter som har utgåtte dato  
+   result=result.filter(item=>new Date(item.happeningStartDate)>=date);
   let item = ``;
   let extraPaidHappenings = getHappeningByPaymentType(result, 3);
+  
+
   for (let i = 0; i < extraPaidHappenings.length; i++) {
     let extraPaidHappening = extraPaidHappenings[i];
     let category = getCategoryById(
