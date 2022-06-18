@@ -46,3 +46,4 @@ Det er en web-applikasjon som viser hva slags muligheter eller aktiviteter det f
 ![mvc-js](https://user-images.githubusercontent.com/48107744/162412170-4582f81e-9944-4cf3-9102-daf9b6b43914.jpg) ![sass-css](https://user-images.githubusercontent.com/48107744/162412248-68298de7-7b10-4be7-8143-ed912e7222bd.jpg)
 
 
+Siden applikasjonen viser hendelsene dynamisk avhengig av de aktuelle start- og sluttdatoene for hendelsene, hvis dataene ikke vises i applikasjonen, det betyr datoene for alle 10 registrerte hendelser utløpt. De som er lurer på mer om prosjektet kan kontakte meg på e-post (adem5434e@gmail.com)
