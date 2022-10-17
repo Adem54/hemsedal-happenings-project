@@ -97,7 +97,7 @@ const model={
             imageUrl:"",
             categoryId:3,
             paymentTypeId:3,
-            happeningStartDate:"2022-11-16",
+            happeningStartDate:"2022-11-11",
             happeningStartTime:"09:00",
             happeningEndDate:"2022-11-27",
             happeningEndTime:"15:00",
